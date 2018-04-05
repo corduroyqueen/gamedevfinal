@@ -30,7 +30,7 @@ public class plankingController : MonoBehaviour {
 		collider = GetComponent<BoxCollider> ();
 		mouseTest = 0f;
 		speedCap = 2;
-		jumpheight = 3f;
+		jumpheight = 8f;
 		grounded = false;
 	}
 
@@ -91,6 +91,20 @@ public class plankingController : MonoBehaviour {
 				rb.AddRelativeForce(new Vector3 (0f, 0f, speed*1.5f),ForceMode.Impulse);
 
 			}	
+
+			if (trigger.GetComponent<groundedCheck> ().groundedDetect==true) {
+				grounded = true;
+			} else {
+				grounded = false;
+			}
+
+			if (grounded) {
+				rb.velocity = new Vector3 (rb.velocity.x, 0f, rb.velocity.z);
+				if (grounded && Input.GetKeyDown (KeyCode.Space)){
+					grounded = false;
+					rb.AddForce(new Vector3 (0f, jumpheight, 0f),ForceMode.Impulse);
+				}
+			}
 				
 		} 
 
@@ -102,19 +116,7 @@ public class plankingController : MonoBehaviour {
 
 
 
-		if (trigger.GetComponent<groundedCheck> ().groundedDetect==true) {
-			grounded = true;
-		} else {
-			grounded = false;
-		}
 
-		if (grounded) {
-			rb.velocity = new Vector3 (rb.velocity.x, 0f, rb.velocity.z);
-			if (grounded && Input.GetKeyDown (KeyCode.Space)){
-				grounded = false;
-				rb.AddForce(new Vector3 (0f, jumpheight, 0f),ForceMode.Impulse);
-			}
-		} else {}
 
 
 	}
