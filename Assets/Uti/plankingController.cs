@@ -2,7 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// This script controls the planker's movement.
+
 public class plankingController : MonoBehaviour {
+
+	// 
 	BoxCollider collider;
 	Rigidbody rb;
 	bool facingleft;
@@ -42,12 +46,15 @@ public class plankingController : MonoBehaviour {
 
 		if (planking==false && LevelManager.instance.returnActive()==this.gameObject){
 
+			// This means the D key will cancel any input to the A key - may lead to a weird feel.
+
 			if(Input.GetKey (KeyCode.D)){
 				collider.material = runningMaterial;
 				rb.AddRelativeForce(speed * 40f,0f,0f);
 			} else if(Input.GetKey (KeyCode.A)){
 				collider.material = runningMaterial;
 				rb.AddRelativeForce(speed * -40f,0f,0f);
+				// Resets the force on the character if nothing is pressed>
 			} else if (Input.GetKey (KeyCode.D) == false && Input.GetKey (KeyCode.A) == false) {
 				rb.velocity = new Vector3 (0f, rb.velocity.y, rb.velocity.z);
 			}
