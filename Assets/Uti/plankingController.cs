@@ -6,7 +6,7 @@ public class plankingController : MonoBehaviour {
 	BoxCollider collider;
 	Rigidbody rb;
 	bool facingleft;
-	bool planking;
+	public bool planking;
 	public GameObject camera;
 	public float speed;
 
@@ -40,7 +40,7 @@ public class plankingController : MonoBehaviour {
 
 	void Update(){
 
-		if (planking==false){
+		if (planking==false && LevelManager.instance.returnActive()==this.gameObject){
 
 			if(Input.GetKey (KeyCode.D)){
 				collider.material = runningMaterial;
@@ -88,11 +88,13 @@ public class plankingController : MonoBehaviour {
 
 			if(Input.GetKeyDown (KeyCode.LeftShift)){
 				planking=true;
-				rb.AddRelativeForce(new Vector3 (0f, 0f, speed),ForceMode.Impulse);
+				rb.AddRelativeForce(new Vector3 (0f, 0f, speed*1.5f),ForceMode.Impulse);
 
 			}	
 				
-		} else {
+		} 
+
+		if(planking==false) {
 			collider.material = stoppedMaterial;
 		}
 
