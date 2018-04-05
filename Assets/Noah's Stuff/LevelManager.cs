@@ -38,7 +38,6 @@ public class LevelManager : MonoBehaviour {
             if (pNum > players.Length - 1) //Checks to see if pNum is going to be out of range of the list. if it is, it sets it back to 0
                 pNum = 0;
             activePlayer = players[pNum]; //Sets the active player to the new player.
-            Debug.Log("Active player is " + activePlayer.name); //Just some helpful tracking information
         }
 	}
 
