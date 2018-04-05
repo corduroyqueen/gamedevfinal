@@ -39,34 +39,24 @@ public class plankingController : MonoBehaviour {
 	}
 
 	void Update(){
-		//camera.transform.rotation = new Quaternion (0f, -90f, 0f, 0f);
 
 		if (planking==false){
-			//transform.rotation = new Quaternion (0f, transform.rotation.y, transform.rotation.z, 0f);
-
-
 
 			if(Input.GetKey (KeyCode.D)){
 				collider.material = runningMaterial;
-				//rb.velocity = new Vector3(speed,0f,rb.velocity.z);
 				rb.AddRelativeForce(speed * 40f,0f,0f);
 			} else if(Input.GetKey (KeyCode.A)){
 				collider.material = runningMaterial;
-				//rb.velocity= new Vector3(-speed,0f,rb.velocity.z);
 				rb.AddRelativeForce(speed * -40f,0f,0f);
 			} else if (Input.GetKey (KeyCode.D) == false && Input.GetKey (KeyCode.A) == false) {
 				rb.velocity = new Vector3 (0f, rb.velocity.y, rb.velocity.z);
 			}
 
-
-
 			if (Input.GetKey (KeyCode.W)) {
 				collider.material = runningMaterial;
-				//rb.velocity = new Vector3 (rb.velocity.x,0f,speed);
 				rb.AddRelativeForce(0f,0f,speed * 40f);
 			} else if(Input.GetKey (KeyCode.S)){
 				collider.material = runningMaterial;
-				//rb.velocity = new Vector3 (rb.velocity.x,0f,-speed);
 				rb.AddRelativeForce(0f,0f,speed * -40f);
 			} else if (Input.GetKey (KeyCode.W) == false && Input.GetKey (KeyCode.S) == false) {
 				rb.velocity = new Vector3 (rb.velocity.x, rb.velocity.y, 0f);
@@ -101,8 +91,7 @@ public class plankingController : MonoBehaviour {
 				rb.AddRelativeForce(new Vector3 (0f, 0f, speed),ForceMode.Impulse);
 
 			}	
-
-
+				
 		} else {
 			collider.material = stoppedMaterial;
 		}
@@ -123,10 +112,7 @@ public class plankingController : MonoBehaviour {
 				grounded = false;
 				rb.AddForce(new Vector3 (0f, jumpheight, 0f),ForceMode.Impulse);
 			}
-		} else {
-			
-		}
-
+		} else {}
 
 
 	}
