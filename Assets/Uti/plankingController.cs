@@ -10,7 +10,7 @@ public class plankingController : MonoBehaviour {
 	BoxCollider collider;
 	Rigidbody rb;
 	bool facingleft;
-	bool planking;
+	public bool planking;
 	public GameObject camera;
 	public float speed;
 
@@ -44,7 +44,7 @@ public class plankingController : MonoBehaviour {
 
 	void Update(){
 
-		if (planking==false){
+		if (planking==false && LevelManager.instance.returnActive()==this.gameObject){
 
 			// This means the D key will cancel any input to the A key - may lead to a weird feel.
 
@@ -95,11 +95,13 @@ public class plankingController : MonoBehaviour {
 
 			if(Input.GetKeyDown (KeyCode.LeftShift)){
 				planking=true;
-				rb.AddRelativeForce(new Vector3 (0f, 0f, speed),ForceMode.Impulse);
+				rb.AddRelativeForce(new Vector3 (0f, 0f, speed*1.5f),ForceMode.Impulse);
 
 			}	
 				
-		} else {
+		} 
+
+		if(planking==false) {
 			collider.material = stoppedMaterial;
 		}
 

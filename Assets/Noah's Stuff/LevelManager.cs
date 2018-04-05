@@ -41,4 +41,9 @@ public class LevelManager : MonoBehaviour {
             Debug.Log("Active player is " + activePlayer.name); //Just some helpful tracking information
         }
 	}
+
+	public GameObject returnActive()
+	{
+		return(activePlayer);
+	}
 }

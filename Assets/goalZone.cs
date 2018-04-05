@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class goalZone : MonoBehaviour {
 
+	public bool complete;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -15,7 +17,12 @@ public class goalZone : MonoBehaviour {
 		
 	}
 
-	void OnTriggerEnter () {
-		SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex+1);	
+	void OnTriggerStay (Collider other) {
+		if (other.gameObject.tag == "Player") {
+			if (other.gameObject.GetComponent<plankingController> ().planking == true) {
+				SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex + 1);	
+				complete = true;
+			}
+		}
 	}
 }
