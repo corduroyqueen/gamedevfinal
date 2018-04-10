@@ -44,7 +44,10 @@ public class plankingController : MonoBehaviour {
 
 	void Update(){
 
+		// This checks if this is the active player.
 		if (planking==false && LevelManager.instance.returnActive()==this.gameObject){
+
+
 
 			// This means the D key will cancel any input to the A key - may lead to a weird feel.
 
@@ -125,13 +128,6 @@ public class plankingController : MonoBehaviour {
 		if(planking==false) {
 			collider.material = stoppedMaterial;
 		}
-
-
-
-
-
-
-
-
+			
 	}
 }
