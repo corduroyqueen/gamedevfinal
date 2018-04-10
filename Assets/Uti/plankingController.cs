@@ -81,6 +81,13 @@ public class plankingController : MonoBehaviour {
 				}
 			}
 
+			if (Input.GetKey (KeyCode.Q)) {
+				mouseTest -= 2f;
+				if (mouseTest >= 360f) {
+					mouseTest = 0f;
+				}
+			}
+
 			transform.rotation = Quaternion.Euler(0f, mouseTest, 0f);
 
 			if (rb.velocity.x>=speedCap)
