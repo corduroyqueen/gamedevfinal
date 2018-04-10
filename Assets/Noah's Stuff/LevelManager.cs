@@ -51,7 +51,7 @@ public class LevelManager : MonoBehaviour {
     {
 		// Use the E and Q keys to cycle through the playable characters.
 		// Increase your position in stack of characters by pressing E.
-		if (Input.GetKeyDown(KeyCode.E)) //This code will run if the button E is pressed
+		if (Input.GetKeyDown(KeyCode.X)) //This code will run if the button E is pressed
         {
             pNum++; //Increases the player number
             if (pNum > players.Length - 1) //Checks to see if pNum is going to be out of range of the list. if it is, it sets it back to 0
@@ -60,7 +60,7 @@ public class LevelManager : MonoBehaviour {
         }
 
 		// Decrease your position in stack of characters by pressing Q.
-		if (Input.GetKeyDown(KeyCode.Q)) //This code will run if the button E is pressed
+		if (Input.GetKeyDown(KeyCode.Z)) //This code will run if the button E is pressed
 		{
 			pNum--; // Decrease the player number
 			if (pNum < 0) //Checks to see if pNum is going to be out of range of the list. if it is, it sets it back to 0
