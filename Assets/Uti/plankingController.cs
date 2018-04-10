@@ -2,7 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// This script controls the planker's movement.
+
 public class plankingController : MonoBehaviour {
+
+	// 
 	BoxCollider collider;
 	Rigidbody rb;
 	bool facingleft;
@@ -30,7 +34,7 @@ public class plankingController : MonoBehaviour {
 		collider = GetComponent<BoxCollider> ();
 		mouseTest = 0f;
 		speedCap = 2;
-		jumpheight = 3f;
+		jumpheight = 8f;
 		grounded = false;
 	}
 
@@ -42,12 +46,15 @@ public class plankingController : MonoBehaviour {
 
 		if (planking==false && LevelManager.instance.returnActive()==this.gameObject){
 
+			// This means the D key will cancel any input to the A key - may lead to a weird feel.
+
 			if(Input.GetKey (KeyCode.D)){
 				collider.material = runningMaterial;
 				rb.AddRelativeForce(speed * 40f,0f,0f);
 			} else if(Input.GetKey (KeyCode.A)){
 				collider.material = runningMaterial;
 				rb.AddRelativeForce(speed * -40f,0f,0f);
+				// Resets the force on the character if nothing is pressed>
 			} else if (Input.GetKey (KeyCode.D) == false && Input.GetKey (KeyCode.A) == false) {
 				rb.velocity = new Vector3 (0f, rb.velocity.y, rb.velocity.z);
 			}
@@ -74,6 +81,13 @@ public class plankingController : MonoBehaviour {
 				}
 			}
 
+			if (Input.GetKey (KeyCode.Q)) {
+				mouseTest -= 2f;
+				if (mouseTest >= 360f) {
+					mouseTest = 0f;
+				}
+			}
+
 			transform.rotation = Quaternion.Euler(0f, mouseTest, 0f);
 
 			if (rb.velocity.x>=speedCap)
@@ -91,6 +105,20 @@ public class plankingController : MonoBehaviour {
 				rb.AddRelativeForce(new Vector3 (0f, 0f, speed*1.5f),ForceMode.Impulse);
 
 			}	
+
+			if (trigger.GetComponent<groundedCheck> ().groundedDetect==true) {
+				grounded = true;
+			} else {
+				grounded = false;
+			}
+
+			if (grounded) {
+				rb.velocity = new Vector3 (rb.velocity.x, 0f, rb.velocity.z);
+				if (grounded && Input.GetKeyDown (KeyCode.Space)){
+					grounded = false;
+					rb.AddForce(new Vector3 (0f, jumpheight, 0f),ForceMode.Impulse);
+				}
+			}
 				
 		} 
 
@@ -102,19 +130,7 @@ public class plankingController : MonoBehaviour {
 
 
 
-		if (trigger.GetComponent<groundedCheck> ().groundedDetect==true) {
-			grounded = true;
-		} else {
-			grounded = false;
-		}
 
-		if (grounded) {
-			rb.velocity = new Vector3 (rb.velocity.x, 0f, rb.velocity.z);
-			if (grounded && Input.GetKeyDown (KeyCode.Space)){
-				grounded = false;
-				rb.AddForce(new Vector3 (0f, jumpheight, 0f),ForceMode.Impulse);
-			}
-		} else {}
 
 
 	}
