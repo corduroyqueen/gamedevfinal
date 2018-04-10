@@ -49,29 +49,40 @@ public class plankingController : MonoBehaviour {
 			// This means the D key will cancel any input to the A key - may lead to a weird feel.
 
 			if(Input.GetKey (KeyCode.D)){
-				collider.material = runningMaterial;
-				rb.AddRelativeForce(speed * 40f,0f,0f);
+				//collider.material = runningMaterial;
+				if (rb.velocity.x <= speedCap) {
+					rb.AddRelativeForce (speed * 40f, 0f, 0f);
+				}
 			} else if(Input.GetKey (KeyCode.A)){
-				collider.material = runningMaterial;
-				rb.AddRelativeForce(speed * -40f,0f,0f);
+				//collider.material = runningMaterial;
+				if (rb.velocity.x >= -speedCap) {
+					rb.AddRelativeForce (speed * -40f, 0f, 0f);
+				}
 				// Resets the force on the character if nothing is pressed>
 			} else if (Input.GetKey (KeyCode.D) == false && Input.GetKey (KeyCode.A) == false) {
 				rb.velocity = new Vector3 (0f, rb.velocity.y, rb.velocity.z);
 			}
 
 			if (Input.GetKey (KeyCode.W)) {
-				collider.material = runningMaterial;
-				rb.AddRelativeForce(0f,0f,speed * 40f);
-			} else if(Input.GetKey (KeyCode.S)){
-				collider.material = runningMaterial;
-				rb.AddRelativeForce(0f,0f,speed * -40f);
+				//collider.material = runningMaterial;
+				if (rb.velocity.z <= speedCap) {
+					rb.AddRelativeForce (0f, 0f, speed * 40f);
+				}
+			} else if (Input.GetKey (KeyCode.S)){
+				//collider.material = runningMaterial;
+				if (rb.velocity.z >= -speedCap) {
+					rb.AddRelativeForce (0f, 0f, speed * -40f);
+				}
 			} else if (Input.GetKey (KeyCode.W) == false && Input.GetKey (KeyCode.S) == false) {
 				rb.velocity = new Vector3 (rb.velocity.x, rb.velocity.y, 0f);
 			}
 				
+			Debug.Log (rb.velocity.x);
+
 			if (Input.GetKey (KeyCode.W) == false && Input.GetKey (KeyCode.S) == false && Input.GetKey (KeyCode.D) == false && Input.GetKey (KeyCode.A) == false) {
+				
 				rb.velocity = new Vector3 (0f, rb.velocity.y, 0f);
-				collider.material = stoppedMaterial;
+				//collider.material = stoppedMaterial;
 			}
 
 			if (Input.GetKey (KeyCode.E)) {
@@ -123,7 +134,7 @@ public class plankingController : MonoBehaviour {
 		} 
 
 		if(planking==false) {
-			collider.material = stoppedMaterial;
+			//collider.material = stoppedMaterial;
 		}
 
 
