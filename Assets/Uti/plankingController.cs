@@ -106,6 +106,8 @@ public class plankingController : MonoBehaviour {
 				}
 			}
 
+			Debug.Log ("MouseTest is: " + mouseTest);
+
 			transform.rotation = Quaternion.Euler(0f, mouseTest, 0f);
 
 			if (rb.velocity.x>=speedCap)
