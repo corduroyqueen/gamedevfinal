@@ -84,7 +84,7 @@ public class plankingController : MonoBehaviour {
 				rb.velocity = new Vector3 (rb.velocity.x, rb.velocity.y, 0f);
 			}
 				
-			Debug.Log (rb.velocity.x);
+			//Debug.Log (rb.velocity.x);
 
 			if (Input.GetKey (KeyCode.W) == false && Input.GetKey (KeyCode.S) == false && Input.GetKey (KeyCode.D) == false && Input.GetKey (KeyCode.A) == false) {
 				
@@ -106,7 +106,7 @@ public class plankingController : MonoBehaviour {
 				}
 			}
 
-			Debug.Log ("MouseTest is: " + mouseTest);
+
 
 			transform.rotation = Quaternion.Euler(0f, mouseTest, 0f);
 
