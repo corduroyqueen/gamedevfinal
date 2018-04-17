@@ -70,6 +70,8 @@ public class LevelManager : MonoBehaviour {
 		pNum = 0; //Sets the player number to 0 to match the default active player
 		activePlayer = players[pNum]; //By default sets the active player to the first player in the list
        
+
+
 		for (int i = 0; i > goldArrowSlot.Length - 1; i++) {
 			goldArrowSlot [i] = new Vector2 (0, 0);
 		}
@@ -137,7 +139,22 @@ public class LevelManager : MonoBehaviour {
     }
     void Update ()
     {
-		
+		Debug.Log (activePlayer);
+
+		// Makes inactive players kinematic.
+		// Scan through all plankers in the scene.
+		for (int i = 0; i < players.Length ; i++) {
+			// If this plankers is NOT the active planker.
+			if (players [i] == activePlayer) {
+				Debug.Log ("Active player" + players [pNum]);
+				// Allow the planker to be moved by physics.
+				players [i].GetComponent<Rigidbody> ().isKinematic = false;
+			} else {
+				players [i].GetComponent<Rigidbody> ().isKinematic = true;
+			}
+
+		}
+
 		// Use the E and Q keys to cycle through the playable characters.
 		// Increase your position in stack of characters by pressing E.
 		if (Input.GetKeyDown(KeyCode.X)) //This code will run if the button E is pressed
@@ -211,5 +228,6 @@ public class LevelManager : MonoBehaviour {
 	public GameObject returnActive()
 	{
 		return(activePlayer);
+
 	}
 }
