@@ -26,6 +26,9 @@ public class plankingController : MonoBehaviour {
 
 	public GameObject trigger;
 
+	// This determines which character you are currently controlling.
+	public GameObject selectionPoint;
+
 
 
 	void Start(){
@@ -44,7 +47,11 @@ public class plankingController : MonoBehaviour {
 
 	void Update(){
 
+		// This checks if this is the active player.
 		if (planking==false && LevelManager.instance.returnActive()==this.gameObject){
+
+			// This point shows which character you are currently controlling.
+			selectionPoint.SetActive (true);
 
 			// This means the D key will cancel any input to the A key - may lead to a weird feel.
 
@@ -77,7 +84,7 @@ public class plankingController : MonoBehaviour {
 				rb.velocity = new Vector3 (rb.velocity.x, rb.velocity.y, 0f);
 			}
 				
-			Debug.Log (rb.velocity.x);
+			//Debug.Log (rb.velocity.x);
 
 			if (Input.GetKey (KeyCode.W) == false && Input.GetKey (KeyCode.S) == false && Input.GetKey (KeyCode.D) == false && Input.GetKey (KeyCode.A) == false) {
 				
@@ -98,6 +105,8 @@ public class plankingController : MonoBehaviour {
 					mouseTest = 0f;
 				}
 			}
+
+
 
 			transform.rotation = Quaternion.Euler(0f, mouseTest, 0f);
 
@@ -133,16 +142,14 @@ public class plankingController : MonoBehaviour {
 				
 		} 
 
-		if(planking==false) {
-			//collider.material = stoppedMaterial;
+		if (LevelManager.instance.returnActive () != this.gameObject) {
+			selectionPoint.SetActive (false);
 		}
 
-
-
-
-
-
-
-
+		if(planking==false) {
+			// This point shows which character you are currently controlling.
+			
+		}
+			
 	}
 }
