@@ -19,22 +19,24 @@ public class LevelManager : MonoBehaviour {
     #region Singleton
     public static LevelManager instance; //This is an instance of the level manager script for reference in other scripts.
 
+	// Create an array of vectors.
 	Vector2[] goldArrowSlot = new Vector2 [4];
 
-
-	// 
+	// These are the "slots" in which we can put the UI representing each planker.
 	public Vector2 UISlotFarRight; 
 	public Vector2 UISlotRight;
 	public Vector2 UISlotCenter;
 	public Vector2 UISlotLeft;
 	public Vector2 UISlotFarLeft;
 
+	// This array contains the images which represent the planker UI.
 	public Image[] UIPlayerBlock;
-
 
 	// This is the gold arrow which designates which player you are currently controlling.
 	public RawImage goldArrow;
 
+	// This int keeps track of what int was pressed.
+	int numberPressed;
 
 
 	// This allows us to get access from the keypad.
@@ -49,11 +51,7 @@ public class LevelManager : MonoBehaviour {
 		KeyCode.Alpha8,
 		KeyCode.Alpha9,
 	};
-
-	// This int keeps track of what int was pressed.
-	int numberPressed;
-
-
+		
     void Awake ()
     {
         if (instance != null) //Checks to see if there is already an instance of the level manager.
@@ -71,11 +69,11 @@ public class LevelManager : MonoBehaviour {
 		activePlayer = players[pNum]; //By default sets the active player to the first player in the list
        
 
-
 		for (int i = 0; i > goldArrowSlot.Length - 1; i++) {
 			goldArrowSlot [i] = new Vector2 (0, 0);
 		}
 
+		// This Switch statement determines how many UI slots there are.
 		switch (players.Length) {
 		case 1:
 			
@@ -137,6 +135,8 @@ public class LevelManager : MonoBehaviour {
 		}
 		goldArrow.rectTransform.anchoredPosition = goldArrowSlot[0];
     }
+
+
     void Update ()
     {
 		Debug.Log (activePlayer);
@@ -182,7 +182,6 @@ public class LevelManager : MonoBehaviour {
 				Debug.Log (numberPressed);
 			}
 		}
-
 
 
 		// This switches the player to the key pressed.
