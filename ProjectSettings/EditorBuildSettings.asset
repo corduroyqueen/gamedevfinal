@@ -6,5 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Uti/brettLevelPrototype.unity
+    guid: 25c68776eaa464e6382acc0f15adfa7a
+  - enabled: 1
     path: Assets/Uti/UtiBranchPrototype.unity
     guid: a323267fc78d3364aaa2da361b808467
