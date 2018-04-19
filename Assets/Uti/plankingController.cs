@@ -46,7 +46,6 @@ public class plankingController : MonoBehaviour {
 	}
 
 	void Update(){
-
 		// This checks if this is the active player.
 		if (planking==false && LevelManager.instance.returnActive()==this.gameObject){
 
@@ -152,4 +151,21 @@ public class plankingController : MonoBehaviour {
 		}
 			
 	}
+
+    private void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.tag == "ground")
+        {
+            rb.useGravity = false;
+            Debug.Log("FUCK");
+        }
+    }
+
+    private void OnCollisionExit(Collision col)
+    {
+        if (col.gameObject.tag == "ground")
+        {
+            rb.useGravity = true;
+        }
+    }
 }
