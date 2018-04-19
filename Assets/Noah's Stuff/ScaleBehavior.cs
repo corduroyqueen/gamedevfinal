@@ -7,8 +7,9 @@ public class ScaleBehavior : MonoBehaviour {
     int playersOn = 0;
     float acceleration = .002f, gravity=0;
     public float minY, maxY;
-    private Vector3 previousPosition;
     Rigidbody rb;
+    public ScaleBehavior partner;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -16,24 +17,31 @@ public class ScaleBehavior : MonoBehaviour {
 
     void Update ()
     {
-        previousPosition = transform.position;
-        if (gravity <= -.1f)
+        if (this.name == "Scale1")
         {
-            gravity = -.03f;
-        }
-        else if (gravity >= .1f)
-        {
-            gravity = .03f;
-        }
-		if (playersOn == 2)
-        {
-            gravity -= acceleration;
+            if (gravity <= -.1f)
+            {
+                gravity = -.03f;
+            }
+            else if (gravity >= .1f)
+            {
+                gravity = .03f;
+            }
+            if (playersOn == 2)
+            {
+                gravity -= acceleration;
+            }
+            else
+            {
+                gravity += acceleration;
+            }
+            rb.velocity = new Vector3(0, gravity, 0);
+            Debug.Log(playersOn);
         }
         else
         {
-            gravity += acceleration;
+            rb.velocity = new Vector3(0, -partner.gravity, 0);
         }
-        transform.position += new Vector3(0, gravity, 0);
 
         if (transform.position.y > maxY)
         {
@@ -44,7 +52,6 @@ public class ScaleBehavior : MonoBehaviour {
         {
             transform.position = new Vector3(transform.position.x, minY, transform.position.z);
         }
-        Debug.Log(playersOn);
 	}
 
     void OnCollisionEnter (Collision col)

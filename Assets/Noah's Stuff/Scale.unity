@@ -373,7 +373,7 @@ GameObject:
   - component: {fileID: 354753457}
   - component: {fileID: 354753462}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: Scale1
   m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -392,6 +392,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minY: 1
   maxY: 5
+  partner: {fileID: 0}
 --- !u!23 &354753458
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -565,8 +566,10 @@ GameObject:
   - component: {fileID: 448654023}
   - component: {fileID: 448654022}
   - component: {fileID: 448654021}
+  - component: {fileID: 448654025}
+  - component: {fileID: 448654026}
   m_Layer: 0
-  m_Name: Cube (2)
+  m_Name: Scale2
   m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -638,6 +641,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &448654025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 448654020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5821c031f859946a93ee2da50dbcb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minY: 1
+  maxY: 5
+  partner: {fileID: 354753457}
+--- !u!54 &448654026
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 448654020}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 122
+  m_CollisionDetection: 0
 --- !u!1001 &451942523
 Prefab:
   m_ObjectHideFlags: 0

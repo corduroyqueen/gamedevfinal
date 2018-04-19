@@ -147,10 +147,10 @@ public class LevelManager : MonoBehaviour {
 			// If this plankers is NOT the active planker.
 			if (players [i] == activePlayer) {
 				Debug.Log ("Active player" + players [pNum]);
-				// Allow the planker to be moved by physics.
-				players [i].GetComponent<Rigidbody> ().isKinematic = false;
+                // Allow the planker to be moved by physics.
+                players[i].GetComponent<Rigidbody>().freezeRotation = false;
 			} else {
-				players [i].GetComponent<Rigidbody> ().isKinematic = true;
+				players [i].GetComponent<Rigidbody> ().freezeRotation = true;
 			}
 
 		}
