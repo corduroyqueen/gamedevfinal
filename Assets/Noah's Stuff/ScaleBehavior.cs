@@ -5,7 +5,7 @@ using UnityEngine;
 public class ScaleBehavior : MonoBehaviour {
 
     int playersOn = 0;
-    float acceleration = .002f, gravity=0;
+    float acceleration = .02f, gravity=0;
     public float minY, maxY;
     Rigidbody rb;
     public ScaleBehavior partner;
@@ -19,13 +19,13 @@ public class ScaleBehavior : MonoBehaviour {
     {
         if (this.name == "Scale1")
         {
-            if (gravity <= -.1f)
+            if (gravity < -.3f)
             {
-                gravity = -.03f;
+                gravity = -.3f;
             }
-            else if (gravity >= .1f)
+            else if (gravity > .3f)
             {
-                gravity = .03f;
+                gravity = .3f;
             }
             if (playersOn == 2)
             {
