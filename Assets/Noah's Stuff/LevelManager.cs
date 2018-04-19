@@ -23,11 +23,11 @@ public class LevelManager : MonoBehaviour {
 	Vector2[] goldArrowSlot = new Vector2 [4];
 
 	// These are the "slots" in which we can put the UI representing each planker.
-	public Vector2 UISlotFarRight; 
-	public Vector2 UISlotRight;
-	public Vector2 UISlotCenter;
-	public Vector2 UISlotLeft;
-	public Vector2 UISlotFarLeft;
+	private Vector2 UISlotFarRight = new Vector2(316,-177);
+	private Vector2 UISlotRight = new Vector2 (258, -177);
+	private Vector2 UISlotCenter = new Vector2 (200, -177);
+	private Vector2 UISlotLeft = new Vector2(142, -177);
+	private Vector2 UISlotFarLeft = new Vector2 (84, -177);
 
 	// This array contains the images which represent the planker UI.
 	public Image[] UIPlayerBlock;
