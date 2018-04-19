@@ -2,7 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// This script controls the planker's movement.
+
 public class plankingController : MonoBehaviour {
+
+	// 
 	BoxCollider collider;
 	Rigidbody rb;
 	bool facingleft;
@@ -22,6 +26,9 @@ public class plankingController : MonoBehaviour {
 
 	public GameObject trigger;
 
+	// This determines which character you are currently controlling.
+	public GameObject selectionPoint;
+
 
 
 	void Start(){
@@ -30,7 +37,7 @@ public class plankingController : MonoBehaviour {
 		collider = GetComponent<BoxCollider> ();
 		mouseTest = 0f;
 		speedCap = 2;
-		jumpheight = 3f;
+		jumpheight = 8f;
 		grounded = false;
 	}
 
@@ -39,32 +46,49 @@ public class plankingController : MonoBehaviour {
 	}
 
 	void Update(){
-
+		// This checks if this is the active player.
 		if (planking==false && LevelManager.instance.returnActive()==this.gameObject){
 
+			// This point shows which character you are currently controlling.
+			selectionPoint.SetActive (true);
+
+			// This means the D key will cancel any input to the A key - may lead to a weird feel.
+
 			if(Input.GetKey (KeyCode.D)){
-				collider.material = runningMaterial;
-				rb.AddRelativeForce(speed * 40f,0f,0f);
+				//collider.material = runningMaterial;
+				if (rb.velocity.x <= speedCap) {
+					rb.AddRelativeForce (speed * 40f, 0f, 0f);
+				}
 			} else if(Input.GetKey (KeyCode.A)){
-				collider.material = runningMaterial;
-				rb.AddRelativeForce(speed * -40f,0f,0f);
+				//collider.material = runningMaterial;
+				if (rb.velocity.x >= -speedCap) {
+					rb.AddRelativeForce (speed * -40f, 0f, 0f);
+				}
+				// Resets the force on the character if nothing is pressed>
 			} else if (Input.GetKey (KeyCode.D) == false && Input.GetKey (KeyCode.A) == false) {
 				rb.velocity = new Vector3 (0f, rb.velocity.y, rb.velocity.z);
 			}
 
 			if (Input.GetKey (KeyCode.W)) {
-				collider.material = runningMaterial;
-				rb.AddRelativeForce(0f,0f,speed * 40f);
-			} else if(Input.GetKey (KeyCode.S)){
-				collider.material = runningMaterial;
-				rb.AddRelativeForce(0f,0f,speed * -40f);
+				//collider.material = runningMaterial;
+				if (rb.velocity.z <= speedCap) {
+					rb.AddRelativeForce (0f, 0f, speed * 40f);
+				}
+			} else if (Input.GetKey (KeyCode.S)){
+				//collider.material = runningMaterial;
+				if (rb.velocity.z >= -speedCap) {
+					rb.AddRelativeForce (0f, 0f, speed * -40f);
+				}
 			} else if (Input.GetKey (KeyCode.W) == false && Input.GetKey (KeyCode.S) == false) {
 				rb.velocity = new Vector3 (rb.velocity.x, rb.velocity.y, 0f);
 			}
 				
+			//Debug.Log (rb.velocity.x);
+
 			if (Input.GetKey (KeyCode.W) == false && Input.GetKey (KeyCode.S) == false && Input.GetKey (KeyCode.D) == false && Input.GetKey (KeyCode.A) == false) {
+				
 				rb.velocity = new Vector3 (0f, rb.velocity.y, 0f);
-				collider.material = stoppedMaterial;
+				//collider.material = stoppedMaterial;
 			}
 
 			if (Input.GetKey (KeyCode.E)) {
@@ -73,6 +97,15 @@ public class plankingController : MonoBehaviour {
 					mouseTest = 0f;
 				}
 			}
+
+			if (Input.GetKey (KeyCode.Q)) {
+				mouseTest -= 2f;
+				if (mouseTest >= 360f) {
+					mouseTest = 0f;
+				}
+			}
+
+
 
 			transform.rotation = Quaternion.Euler(0f, mouseTest, 0f);
 
@@ -91,31 +124,48 @@ public class plankingController : MonoBehaviour {
 				rb.AddRelativeForce(new Vector3 (0f, 0f, speed*1.5f),ForceMode.Impulse);
 
 			}	
+
+			if (trigger.GetComponent<groundedCheck> ().groundedDetect==true) {
+				grounded = true;
+			} else {
+				grounded = false;
+			}
+
+			if (grounded) {
+				rb.velocity = new Vector3 (rb.velocity.x, 0f, rb.velocity.z);
+				if (grounded && Input.GetKeyDown (KeyCode.Space)){
+					grounded = false;
+					rb.AddForce(new Vector3 (0f, jumpheight, 0f),ForceMode.Impulse);
+				}
+			}
 				
 		} 
 
+		if (LevelManager.instance.returnActive () != this.gameObject) {
+			selectionPoint.SetActive (false);
+		}
+
 		if(planking==false) {
-			collider.material = stoppedMaterial;
+			// This point shows which character you are currently controlling.
+			
 		}
-
-
-
-
-
-		if (trigger.GetComponent<groundedCheck> ().groundedDetect==true) {
-			grounded = true;
-		} else {
-			grounded = false;
-		}
-
-		if (grounded) {
-			rb.velocity = new Vector3 (rb.velocity.x, 0f, rb.velocity.z);
-			if (grounded && Input.GetKeyDown (KeyCode.Space)){
-				grounded = false;
-				rb.AddForce(new Vector3 (0f, jumpheight, 0f),ForceMode.Impulse);
-			}
-		} else {}
-
-
+			
 	}
+
+    private void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.tag == "ground")
+        {
+            rb.useGravity = false;
+            Debug.Log("FUCK");
+        }
+    }
+
+    private void OnCollisionExit(Collision col)
+    {
+        if (col.gameObject.tag == "ground")
+        {
+            rb.useGravity = true;
+        }
+    }
 }
