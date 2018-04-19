@@ -13,7 +13,7 @@ public class LevelManager : MonoBehaviour {
     public int deathHeight; //This is the y position at which the player character will die/reset
     public GameObject[] players; //This is the array of playable characters
 
-    private GameObject activePlayer; //This is going to be the active player
+    GameObject activePlayer; //This is going to be the active player
     private int pNum; //An int to keep track of which player we are
 
     #region Singleton
