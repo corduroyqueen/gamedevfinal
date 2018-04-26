@@ -854,7 +854,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 312348848}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 75ce4fdc3e99e184c837618d61b1565a, type: 3}
   m_Name: 
@@ -960,9 +960,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 312348848}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 614e305f46644d542a38c70c74660777, type: 3}
+  m_Script: {fileID: 11500000, guid: 33adbdfa1056b134b9b4599074b06b2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  planking: 0
+  camera: {fileID: 1208453790}
+  speed: 2.5
+  grounded: 0
+  mouseTest: 0
+  speedCap: 0
+  jumpheight: 3
+  trigger: {fileID: 1072570164}
+  yCurve: 0
+  selectionPoint: {fileID: 180568549}
 --- !u!1 &416210372
 GameObject:
   m_ObjectHideFlags: 0
@@ -2014,6 +2024,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   present: 0
   activatable: {fileID: 1552023728}
+  activatable2: {fileID: 1552023728}
   playerAmt: 0
 --- !u!23 &1425606777
 MeshRenderer:
@@ -2155,11 +2166,6 @@ MonoBehaviour:
   players:
   - {fileID: 312348848}
   - {fileID: 1861974590}
-  UISlotFarRight: {x: 0, y: 0}
-  UISlotRight: {x: 0, y: 0}
-  UISlotCenter: {x: 0, y: 0}
-  UISlotLeft: {x: 0, y: 0}
-  UISlotFarLeft: {x: 0, y: 0}
   UIPlayerBlock: []
   goldArrow: {fileID: 0}
 --- !u!4 &1460032197
@@ -2385,6 +2391,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec88fef8ff2a1f84ab5f278ed2a48630, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movingVertically: 1
+  movingHorizontally: 0
   activated: 0
   distance: -2.3
   moveSpeed: 0.1
@@ -2795,7 +2803,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1861974590}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 75ce4fdc3e99e184c837618d61b1565a, type: 3}
   m_Name: 
@@ -2905,6 +2913,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bounceHeight: 0
+  bouncing: 0
 --- !u!114 &1861974599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2913,9 +2922,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1861974590}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 614e305f46644d542a38c70c74660777, type: 3}
+  m_Script: {fileID: 11500000, guid: 33adbdfa1056b134b9b4599074b06b2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  planking: 0
+  camera: {fileID: 1208453790}
+  speed: 2.5
+  grounded: 0
+  mouseTest: 0
+  speedCap: 0
+  jumpheight: 0
+  trigger: {fileID: 416210372}
+  yCurve: 0
+  selectionPoint: {fileID: 547056520}
 --- !u!1 &1927898253
 GameObject:
   m_ObjectHideFlags: 0

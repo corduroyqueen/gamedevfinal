@@ -2,11 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// This script controls the planker's movement.
+public class translateController : MonoBehaviour {
 
-public class plankingController : MonoBehaviour {
-
-	// 
 	BoxCollider collider;
 	Rigidbody rb;
 	bool facingleft;
@@ -16,15 +13,15 @@ public class plankingController : MonoBehaviour {
 
 	public bool grounded;
 
-	public PhysicMaterial runningMaterial;
-	public PhysicMaterial stoppedMaterial;
-
 	public float mouseTest;
 
 	public float speedCap;
 	public float jumpheight;
 
 	public GameObject trigger;
+
+	public float yCurve;
+	float yTimer;
 
 	// This determines which character you are currently controlling.
 	public GameObject selectionPoint;
@@ -42,7 +39,7 @@ public class plankingController : MonoBehaviour {
 	}
 
 	void FixedUpdate(){
-		
+
 	}
 
 	void Update(){
@@ -57,6 +54,7 @@ public class plankingController : MonoBehaviour {
 			if(Input.GetKey (KeyCode.D)){
 				//collider.material = runningMaterial;
 				transform.Translate(Vector3.right*speed*Time.deltaTime);
+
 			} else if(Input.GetKey (KeyCode.A)){
 				//collider.material = runningMaterial;
 				transform.Translate(Vector3.left*speed*Time.deltaTime);
@@ -74,11 +72,11 @@ public class plankingController : MonoBehaviour {
 			} else if (Input.GetKey (KeyCode.W) == false && Input.GetKey (KeyCode.S) == false) {
 				rb.velocity = new Vector3 (rb.velocity.x, rb.velocity.y, 0f);
 			}
-				
+
 			//Debug.Log (rb.velocity.x);
 
 			if (Input.GetKey (KeyCode.W) == false && Input.GetKey (KeyCode.S) == false && Input.GetKey (KeyCode.D) == false && Input.GetKey (KeyCode.A) == false) {
-				
+
 				rb.velocity = new Vector3 (0f, rb.velocity.y, 0f);
 				//collider.material = stoppedMaterial;
 			}
@@ -125,12 +123,23 @@ public class plankingController : MonoBehaviour {
 
 			if (grounded) {
 				rb.velocity = new Vector3 (rb.velocity.x, 0f, rb.velocity.z);
-				if (grounded && Input.GetKeyDown (KeyCode.Space)){
+				if (grounded && Input.GetKeyDown (KeyCode.Space)) {
 					grounded = false;
-					rb.AddForce(new Vector3 (0f, jumpheight, 0f),ForceMode.Impulse);
+					rb.AddForce (new Vector3 (0f, jumpheight, 0f), ForceMode.Impulse);
 				}
+
+				yTimer = 0f;
+
+			} else {
+
+				//yTimer += 0.5f;
+
+			//	yCurve = -((yTimer)*(yTimer))+1f;
+
+				//rb.velocity = new Vector3 (rb.velocity.x, yCurve, rb.velocity.z);
+
 			}
-				
+
 		} 
 
 		if (LevelManager.instance.returnActive () != this.gameObject) {
@@ -139,25 +148,25 @@ public class plankingController : MonoBehaviour {
 
 		if(planking==false) {
 			// This point shows which character you are currently controlling.
-			
+
 		}
-			
+
 	}
 
-    private void OnCollisionEnter(Collision col)
-    {
-        if (col.gameObject.tag == "ground")
-        {
-            rb.useGravity = false;
-            Debug.Log("FUCK");
-        }
-    }
+	private void OnCollisionEnter(Collision col)
+	{
+		if (col.gameObject.tag == "ground")
+		{
+			rb.useGravity = false;
+			Debug.Log("FUCK");
+		}
+	}
 
-    private void OnCollisionExit(Collision col)
-    {
-        if (col.gameObject.tag == "ground")
-        {
-            rb.useGravity = true;
-        }
-    }
+	private void OnCollisionExit(Collision col)
+	{
+		if (col.gameObject.tag == "ground")
+		{
+			rb.useGravity = true;
+		}
+	}
 }
