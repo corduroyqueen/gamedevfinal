@@ -854,7 +854,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 312348848}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 75ce4fdc3e99e184c837618d61b1565a, type: 3}
   m_Name: 
@@ -870,6 +870,8 @@ MonoBehaviour:
   jumpheight: 3
   trigger: {fileID: 1072570164}
   selectionPoint: {fileID: 697373550}
+  xRotation: 0
+  still: 0
 --- !u!114 &312348851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -958,7 +960,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 312348848}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 33adbdfa1056b134b9b4599074b06b2e, type: 3}
   m_Name: 
@@ -2536,6 +2538,8 @@ MonoBehaviour:
   jumpheight: 0
   trigger: {fileID: 207043069}
   selectionPoint: {fileID: 697373550}
+  xRotation: 0
+  still: 0
 --- !u!114 &1654257818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2803,7 +2807,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1861974590}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 75ce4fdc3e99e184c837618d61b1565a, type: 3}
   m_Name: 
@@ -2819,6 +2823,8 @@ MonoBehaviour:
   jumpheight: 0
   trigger: {fileID: 416210372}
   selectionPoint: {fileID: 697373550}
+  xRotation: 0
+  still: 0
 --- !u!114 &1861974593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2920,7 +2926,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1861974590}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 33adbdfa1056b134b9b4599074b06b2e, type: 3}
   m_Name: 
