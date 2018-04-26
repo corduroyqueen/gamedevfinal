@@ -29,6 +29,8 @@ public class plankingController : MonoBehaviour {
 	// This determines which character you are currently controlling.
 	public GameObject selectionPoint;
 
+	public float xRotation;
+	public bool still;
 
 
 	void Start(){
@@ -39,6 +41,7 @@ public class plankingController : MonoBehaviour {
 		speedCap = 2;
 		jumpheight = 8f;
 		grounded = false;
+		xRotation = 0f;
 	}
 
 	void FixedUpdate(){
@@ -141,7 +144,12 @@ public class plankingController : MonoBehaviour {
 			// This point shows which character you are currently controlling.
 			
 		}
-			
+		if (transform.rotation.x == xRotation) {
+			still = true;
+		} else {
+			still = false;
+		}
+		xRotation = transform.rotation.x;	
 	}
 
     private void OnCollisionEnter(Collision col)
