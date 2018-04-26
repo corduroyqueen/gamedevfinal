@@ -148,9 +148,16 @@ public class LevelManager : MonoBehaviour {
 			if (players [i] == activePlayer) {
 				Debug.Log ("Active player" + players [pNum]);
                 // Allow the planker to be moved by physics.
-                players[i].GetComponent<Rigidbody>().freezeRotation = false;
+				//players[i].GetComponent<Rigidbody>().freezeRotation = false;
+
+
+				players [i].GetComponent<Rigidbody> ().constraints = RigidbodyConstraints.None;
+
+
 			} else {
 				players [i].GetComponent<Rigidbody> ().freezeRotation = true;
+				players [i].GetComponent<Rigidbody> ().constraints = RigidbodyConstraints.FreezePositionX;
+				players [i].GetComponent<Rigidbody> ().constraints = RigidbodyConstraints.FreezePositionZ;
 			}
 
 		}

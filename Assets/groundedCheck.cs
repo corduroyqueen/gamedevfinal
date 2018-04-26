@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class groundedCheck : MonoBehaviour {
 	public bool groundedDetect;
+	int playerAmt;
 	// Use this for initialization
 	void Start () {
 		
@@ -14,15 +15,20 @@ public class groundedCheck : MonoBehaviour {
 		
 	}
 
-	public void OnTriggerEnter(Collider other){
-		if (other.gameObject.name == "ground") {
+	void OnTriggerEnter(Collider other){
+		if (other.gameObject.name=="ground") {
 			groundedDetect = true;
+			playerAmt += 1;
 		}
+
 	}
 
-	public void OnTriggerExit(Collider other){
-		if (other.gameObject.name == "ground") {
-			groundedDetect = false;
+	void OnTriggerExit(Collider other){
+		if (other.gameObject.name=="ground" && groundedDetect==true) {
+			if (playerAmt==1) {
+				groundedDetect = false;
+			}
+			playerAmt -= 1;
 		}
 	}
 }

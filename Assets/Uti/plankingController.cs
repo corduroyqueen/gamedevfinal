@@ -56,14 +56,10 @@ public class plankingController : MonoBehaviour {
 
 			if(Input.GetKey (KeyCode.D)){
 				//collider.material = runningMaterial;
-				if (rb.velocity.x <= speedCap) {
-					rb.AddRelativeForce (speed * 40f, 0f, 0f);
-				}
+				transform.Translate(Vector3.right*speed*Time.deltaTime);
 			} else if(Input.GetKey (KeyCode.A)){
 				//collider.material = runningMaterial;
-				if (rb.velocity.x >= -speedCap) {
-					rb.AddRelativeForce (speed * -40f, 0f, 0f);
-				}
+				transform.Translate(Vector3.left*speed*Time.deltaTime);
 				// Resets the force on the character if nothing is pressed>
 			} else if (Input.GetKey (KeyCode.D) == false && Input.GetKey (KeyCode.A) == false) {
 				rb.velocity = new Vector3 (0f, rb.velocity.y, rb.velocity.z);
@@ -71,14 +67,10 @@ public class plankingController : MonoBehaviour {
 
 			if (Input.GetKey (KeyCode.W)) {
 				//collider.material = runningMaterial;
-				if (rb.velocity.z <= speedCap) {
-					rb.AddRelativeForce (0f, 0f, speed * 40f);
-				}
+				transform.Translate(Vector3.forward*speed*Time.deltaTime);
 			} else if (Input.GetKey (KeyCode.S)){
 				//collider.material = runningMaterial;
-				if (rb.velocity.z >= -speedCap) {
-					rb.AddRelativeForce (0f, 0f, speed * -40f);
-				}
+				transform.Translate(Vector3.back*speed*Time.deltaTime);
 			} else if (Input.GetKey (KeyCode.W) == false && Input.GetKey (KeyCode.S) == false) {
 				rb.velocity = new Vector3 (rb.velocity.x, rb.velocity.y, 0f);
 			}
