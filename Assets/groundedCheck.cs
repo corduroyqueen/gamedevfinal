@@ -16,7 +16,7 @@ public class groundedCheck : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other){
-		if (other.gameObject.name=="ground") {
+		if (other.gameObject.name=="ground" || other.gameObject.tag=="Player") {
 			groundedDetect = true;
 			playerAmt += 1;
 		}
@@ -24,7 +24,7 @@ public class groundedCheck : MonoBehaviour {
 	}
 
 	void OnTriggerExit(Collider other){
-		if (other.gameObject.name=="ground" && groundedDetect==true) {
+		if ((other.gameObject.name=="ground" || other.gameObject.tag=="Player") && groundedDetect==true) {
 			if (playerAmt==1) {
 				groundedDetect = false;
 			}
