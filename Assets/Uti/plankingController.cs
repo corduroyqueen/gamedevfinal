@@ -13,6 +13,7 @@ public class plankingController : MonoBehaviour {
 	public bool planking;
 	public GameObject camera;
 	public float speed;
+    public bool stillCheck = true;
 
 	public bool grounded;
 
@@ -33,7 +34,7 @@ public class plankingController : MonoBehaviour {
 	public bool still;
 
 
-	void Start(){
+    void Start(){
 		rb=GetComponent<Rigidbody>();	
 		planking = false;
 		collider = GetComponent<BoxCollider> ();
@@ -144,11 +145,20 @@ public class plankingController : MonoBehaviour {
 			// This point shows which character you are currently controlling.
 			
 		}
-		if (transform.rotation.x == xRotation) {
+        if (!stillCheck)
+        {
+            stillCheck = true;
+        } else if (transform.eulerAngles.x == xRotation) {
 			still = true;
+            xRotation = transform.eulerAngles.x;
+            Debug.Log(xRotation);
+            Debug.Log("Actual rotation: " + transform.rotation.x);
+            stillCheck = false;
 		} else {
 			still = false;
+            xRotation = transform.eulerAngles.x;
+            Debug.Log("Should be movin");
+            stillCheck = false;
 		}
-		xRotation = transform.rotation.x;	
 	}
  }
