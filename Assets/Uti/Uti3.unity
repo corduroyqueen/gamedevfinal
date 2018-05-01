@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657993, g: 0.49641424, b: 0.57481825, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657958, g: 0.49641377, b: 0.57481766, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -563,6 +563,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 23819506598454556, guid: 5070ad5039fde4e4880b1178c12dcd4b,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ada68161c9b654b04a7d3d46c1c09b61, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5070ad5039fde4e4880b1178c12dcd4b, type: 2}
   m_IsPrefabParent: 0
@@ -1180,6 +1185,10 @@ Prefab:
       propertyPath: m_Name
       value: yogamat (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 11e70adf515a5470f9b3bfb67df44e6c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 262832cb5962c4914a9a8bb76f615032, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 11e70adf515a5470f9b3bfb67df44e6c, type: 3}
   m_IsPrefabParent: 0
@@ -1355,7 +1364,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1111301548}
-  m_LocalRotation: {x: 0.36599812, y: 0.4531539, z: -0.2113091, w: 0.7848855}
+  m_LocalRotation: {x: 0.36599815, y: 0.45315394, z: -0.21130912, w: 0.7848856}
   m_LocalPosition: {x: -10.7, y: 3, z: -6.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1401,6 +1410,21 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 23150507978114072, guid: ee71d533d75b98e4ba36ef54d547e098,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 262832cb5962c4914a9a8bb76f615032, type: 2}
+    - target: {fileID: 23813211071387572, guid: ee71d533d75b98e4ba36ef54d547e098,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 262832cb5962c4914a9a8bb76f615032, type: 2}
+    - target: {fileID: 23210042254324726, guid: ee71d533d75b98e4ba36ef54d547e098,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 262832cb5962c4914a9a8bb76f615032, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ee71d533d75b98e4ba36ef54d547e098, type: 2}
   m_IsPrefabParent: 0
@@ -1840,6 +1864,18 @@ Prefab:
       propertyPath: m_Name
       value: handweight (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 85a8704b97bc840feae5e2d4875bca63, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ada68161c9b654b04a7d3d46c1c09b61, type: 2}
+    - target: {fileID: 2300004, guid: 85a8704b97bc840feae5e2d4875bca63, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ada68161c9b654b04a7d3d46c1c09b61, type: 2}
+    - target: {fileID: 2300002, guid: 85a8704b97bc840feae5e2d4875bca63, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ada68161c9b654b04a7d3d46c1c09b61, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 85a8704b97bc840feae5e2d4875bca63, type: 3}
   m_IsPrefabParent: 0
