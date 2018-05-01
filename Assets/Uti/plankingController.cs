@@ -26,6 +26,11 @@ public class plankingController : MonoBehaviour {
 
 	public GameObject trigger;
 
+	// This determines which character you are currently controlling.
+	public GameObject selectionPoint;
+
+	public float xRotation;
+	public bool still;
 
 
 	void Start(){
@@ -36,6 +41,7 @@ public class plankingController : MonoBehaviour {
 		speedCap = 2;
 		jumpheight = 8f;
 		grounded = false;
+		xRotation = 0f;
 	}
 
 	void FixedUpdate(){
@@ -43,35 +49,41 @@ public class plankingController : MonoBehaviour {
 	}
 
 	void Update(){
-
+		// This checks if this is the active player.
 		if (planking==false && LevelManager.instance.returnActive()==this.gameObject){
+
+			// This point shows which character you are currently controlling.
+			selectionPoint.SetActive (true);
 
 			// This means the D key will cancel any input to the A key - may lead to a weird feel.
 
 			if(Input.GetKey (KeyCode.D)){
-				collider.material = runningMaterial;
-				rb.AddRelativeForce(speed * 40f,0f,0f);
+				//collider.material = runningMaterial;
+				transform.Translate(Vector3.right*speed*Time.deltaTime);
 			} else if(Input.GetKey (KeyCode.A)){
-				collider.material = runningMaterial;
-				rb.AddRelativeForce(speed * -40f,0f,0f);
+				//collider.material = runningMaterial;
+				transform.Translate(Vector3.left*speed*Time.deltaTime);
 				// Resets the force on the character if nothing is pressed>
 			} else if (Input.GetKey (KeyCode.D) == false && Input.GetKey (KeyCode.A) == false) {
 				rb.velocity = new Vector3 (0f, rb.velocity.y, rb.velocity.z);
 			}
 
 			if (Input.GetKey (KeyCode.W)) {
-				collider.material = runningMaterial;
-				rb.AddRelativeForce(0f,0f,speed * 40f);
-			} else if(Input.GetKey (KeyCode.S)){
-				collider.material = runningMaterial;
-				rb.AddRelativeForce(0f,0f,speed * -40f);
+				//collider.material = runningMaterial;
+				transform.Translate(Vector3.forward*speed*Time.deltaTime);
+			} else if (Input.GetKey (KeyCode.S)){
+				//collider.material = runningMaterial;
+				transform.Translate(Vector3.back*speed*Time.deltaTime);
 			} else if (Input.GetKey (KeyCode.W) == false && Input.GetKey (KeyCode.S) == false) {
 				rb.velocity = new Vector3 (rb.velocity.x, rb.velocity.y, 0f);
 			}
 				
+			//Debug.Log (rb.velocity.x);
+
 			if (Input.GetKey (KeyCode.W) == false && Input.GetKey (KeyCode.S) == false && Input.GetKey (KeyCode.D) == false && Input.GetKey (KeyCode.A) == false) {
+				
 				rb.velocity = new Vector3 (0f, rb.velocity.y, 0f);
-				collider.material = stoppedMaterial;
+				//collider.material = stoppedMaterial;
 			}
 
 			if (Input.GetKey (KeyCode.E)) {
@@ -87,6 +99,8 @@ public class plankingController : MonoBehaviour {
 					mouseTest = 0f;
 				}
 			}
+
+
 
 			transform.rotation = Quaternion.Euler(0f, mouseTest, 0f);
 
@@ -122,16 +136,19 @@ public class plankingController : MonoBehaviour {
 				
 		} 
 
-		if(planking==false) {
-			collider.material = stoppedMaterial;
+		if (LevelManager.instance.returnActive () != this.gameObject) {
+			selectionPoint.SetActive (false);
 		}
 
-
-
-
-
-
-
-
+		if(planking==false) {
+			// This point shows which character you are currently controlling.
+			
+		}
+		if (transform.rotation.x == xRotation) {
+			still = true;
+		} else {
+			still = false;
+		}
+		xRotation = transform.rotation.x;	
 	}
-}
+ }
