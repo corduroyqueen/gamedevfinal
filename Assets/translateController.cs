@@ -8,7 +8,7 @@ public class translateController : MonoBehaviour {
 	Rigidbody rb;
 	bool facingleft;
 	public bool planking;
-	public GameObject camera;
+	//public GameObject camera;
 	public float speed;
 
 	public bool grounded;

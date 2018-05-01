@@ -155,10 +155,13 @@ public class LevelManager : MonoBehaviour {
 
 
 			} else {
-				players [i].GetComponent<Rigidbody> ().freezeRotation = true;
-				players [i].GetComponent<Rigidbody> ().constraints = RigidbodyConstraints.FreezePositionX;
-				players [i].GetComponent<Rigidbody> ().constraints = RigidbodyConstraints.FreezePositionZ;
+				if (players [i].GetComponent<plankingController> ().still == true) {
+					players [i].GetComponent<Rigidbody> ().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
+				} else {
+					
+				}
 			}
+
 
 		}
 
