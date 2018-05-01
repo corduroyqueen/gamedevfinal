@@ -15,7 +15,6 @@ public class SoundEffects : MonoBehaviour {
     public AudioSource plank;
 	
 	void Update () {
-        // if (Mathf.Abs(p.xRotation - 90) <= .05f && p.planking && !hasPlanked)
         if (p.still && p.planking && p.xRotation > 10 && !hasPlanked)
         {
             hasPlanked = true;
@@ -34,10 +33,6 @@ public class SoundEffects : MonoBehaviour {
             jump.Play();
             hasJumped = true;
             hasLanded = false;
-        }
-        else
-        {
-            Debug.Log(p.xRotation);
         }
 	}
 }

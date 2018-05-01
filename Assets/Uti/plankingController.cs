@@ -14,6 +14,7 @@ public class plankingController : MonoBehaviour {
 	public GameObject camera;
 	public float speed;
     public bool stillCheck = true;
+    public bool jumping = false;
 
 	public bool grounded;
 
@@ -33,6 +34,7 @@ public class plankingController : MonoBehaviour {
 	public float xRotation;
 	public bool still;
 
+    public AudioSource jump;
 
     void Start(){
 		rb=GetComponent<Rigidbody>();	
@@ -119,11 +121,12 @@ public class plankingController : MonoBehaviour {
 				planking=true;
 				rb.AddRelativeForce(new Vector3 (0f, 0f, speed*1.5f),ForceMode.Impulse);
 
-			}	
+			}
 
-			if (trigger.GetComponent<groundedCheck> ().groundedDetect==true) {
-				grounded = true;
-			} else {
+            if (trigger.GetComponent<groundedCheck>().groundedDetect == true) {
+                grounded = true;
+                jumping = false;
+            } else {
 				grounded = false;
 			}
 
@@ -132,6 +135,9 @@ public class plankingController : MonoBehaviour {
 				if (grounded && Input.GetKeyDown (KeyCode.Space)){
 					grounded = false;
 					rb.AddForce(new Vector3 (0f, jumpheight, 0f),ForceMode.Impulse);
+                    jumping = true;
+                    jump.Play();
+
 				}
 			}
 				
