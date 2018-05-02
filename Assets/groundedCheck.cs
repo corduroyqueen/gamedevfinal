@@ -15,20 +15,22 @@ public class groundedCheck : MonoBehaviour {
 		
 	}
 
-	void OnTriggerEnter(Collider other){
-		if (other.gameObject.name=="ground" || other.gameObject.tag=="Player") {
+    void OnTriggerExit(Collider other)
+    {
+        if ((other.gameObject.tag == "ground" || other.gameObject.tag == "Player") && groundedDetect == true)
+        {
+            if (playerAmt == 1)
+            {
+                groundedDetect = false;
+            }
+            playerAmt -= 1;
+        }
+    }
+
+    void OnTriggerEnter(Collider other){
+		if (other.gameObject.tag=="ground" || other.gameObject.tag=="Player") {
 			groundedDetect = true;
 			playerAmt += 1;
-		}
-
-	}
-
-	void OnTriggerExit(Collider other){
-		if ((other.gameObject.name=="ground" || other.gameObject.tag=="Player") && groundedDetect==true) {
-			if (playerAmt==1) {
-				groundedDetect = false;
-			}
-			playerAmt -= 1;
 		}
 	}
 }

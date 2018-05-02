@@ -675,6 +675,7 @@ GameObject:
   - component: {fileID: 114959712388158346}
   - component: {fileID: 114603562685178304}
   - component: {fileID: 114958973037546470}
+  - component: {fileID: 114240045932669740}
   m_Layer: 0
   m_Name: bouncyplanker
   m_TagString: Player
@@ -4189,6 +4190,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1570436341330422}
   rotateSpeed: 5
+--- !u!114 &114240045932669740
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1570436341330422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05a47969f2a6ded4994b0b148ed8ee80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  p: {fileID: 114958973037546470}
+  jump: {fileID: 0}
+  land: {fileID: 0}
+  plank: {fileID: 0}
 --- !u!114 &114399021625064616
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4243,6 +4259,7 @@ MonoBehaviour:
   planking: 0
   camera: {fileID: 1317314548333912}
   speed: 2.5
+  stillCheck: 1
   grounded: 0
   runningMaterial: {fileID: 0}
   stoppedMaterial: {fileID: 0}
