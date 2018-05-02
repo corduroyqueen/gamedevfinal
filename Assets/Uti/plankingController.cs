@@ -13,6 +13,8 @@ public class plankingController : MonoBehaviour {
 	public bool planking;
 	public GameObject camera;
 	public float speed;
+    public bool stillCheck = true;
+    public bool jumping = false;
 
 	public bool grounded;
 
@@ -32,8 +34,9 @@ public class plankingController : MonoBehaviour {
 	public float xRotation;
 	public bool still;
 
+    public AudioSource jump;
 
-	void Start(){
+    void Start(){
 		rb=GetComponent<Rigidbody>();	
 		planking = false;
 		collider = GetComponent<BoxCollider> ();
@@ -118,11 +121,12 @@ public class plankingController : MonoBehaviour {
 				planking=true;
 				rb.AddRelativeForce(new Vector3 (0f, 0f, speed*1.5f),ForceMode.Impulse);
 
-			}	
+			}
 
-			if (trigger.GetComponent<groundedCheck> ().groundedDetect==true) {
-				grounded = true;
-			} else {
+            if (trigger.GetComponent<groundedCheck>().groundedDetect == true) {
+                grounded = true;
+                jumping = false;
+            } else {
 				grounded = false;
 			}
 
@@ -131,6 +135,9 @@ public class plankingController : MonoBehaviour {
 				if (grounded && Input.GetKeyDown (KeyCode.Space)){
 					grounded = false;
 					rb.AddForce(new Vector3 (0f, jumpheight, 0f),ForceMode.Impulse);
+                    jumping = true;
+                    jump.Play();
+
 				}
 			}
 				
@@ -144,11 +151,20 @@ public class plankingController : MonoBehaviour {
 			// This point shows which character you are currently controlling.
 			
 		}
-		if (transform.rotation.x == xRotation) {
+        if (!stillCheck)
+        {
+            stillCheck = true;
+        } else if (transform.eulerAngles.x == xRotation) {
 			still = true;
+            xRotation = transform.eulerAngles.x;
+            Debug.Log(xRotation);
+            Debug.Log("Actual rotation: " + transform.rotation.x);
+            stillCheck = false;
 		} else {
 			still = false;
+            xRotation = transform.eulerAngles.x;
+            Debug.Log("Should be movin");
+            stillCheck = false;
 		}
-		xRotation = transform.rotation.x;	
 	}
  }

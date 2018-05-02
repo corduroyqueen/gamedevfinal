@@ -25,6 +25,9 @@ public class mouseAimCamera : MonoBehaviour {
 	}
 
 	void LateUpdate() {
+		Cursor.visible = false;
+		Cursor.lockState = CursorLockMode.Locked;
+
 		// Get input from mouse.
 		float horizontal = Input.GetAxis("Mouse X") * rotateSpeed;
 		// In the planker controller, change the planker's rotation using input from the mouse.
@@ -39,5 +42,7 @@ public class mouseAimCamera : MonoBehaviour {
 
 		// Point this camera at the player.
 		transform.LookAt(target.transform);
+
+
 	}
 }
