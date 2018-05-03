@@ -265,7 +265,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &197857616
 RectTransform:
   m_ObjectHideFlags: 0
@@ -346,7 +346,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1258362006}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -579,7 +579,7 @@ RectTransform:
   m_LocalScale: {x: 8.467253, y: 4.6522512, z: 4.217899}
   m_Children: []
   m_Father: {fileID: 1258362006}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1103,10 +1103,10 @@ RectTransform:
   - {fileID: 1557584078}
   - {fileID: 1867645610}
   - {fileID: 129775154}
-  - {fileID: 495794606}
-  - {fileID: 1883317571}
-  - {fileID: 209059822}
   - {fileID: 1765609521}
+  - {fileID: 1883317571}
+  - {fileID: 495794606}
+  - {fileID: 209059822}
   m_Father: {fileID: 1289024829}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1526,7 +1526,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1765609521
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1538,12 +1538,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1258362006}
-  m_RootOrder: 7
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -13.9, y: 4}
-  m_SizeDelta: {x: 646.3, y: 376.26}
+  m_AnchoredPosition: {x: 8.999994, y: 15}
+  m_SizeDelta: {x: 646.3, y: 435.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1765609522
 MonoBehaviour:
@@ -1577,7 +1577,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Plankerobics Now:\nThe Complete Seven Tape \nWorkout"
+  m_Text: "GOAL: Plank onto \nthe next vhs tape to continue\nyour training."
 --- !u!222 &1765609523
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2110,7 +2110,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2117985222
 RectTransform:
   m_ObjectHideFlags: 0
