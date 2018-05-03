@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657958, g: 0.49641377, b: 0.57481766, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657993, g: 0.49641424, b: 0.57481825, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 25821163}
   m_Layer: 0
   m_Name: ground
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2552,7 +2552,7 @@ GameObject:
   - component: {fileID: 1039005375}
   m_Layer: 0
   m_Name: ground
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3094,7 +3094,7 @@ GameObject:
   - component: {fileID: 1237430432}
   m_Layer: 0
   m_Name: ground (3)
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4908,7 +4908,7 @@ Transform:
   m_GameObject: {fileID: 1995345675}
   m_LocalRotation: {x: -0.00017933968, y: 0.7067044, z: -0.00004217699, w: 0.7075089}
   m_LocalPosition: {x: 18.39, y: 4.7067e-11, z: 3.03}
-  m_LocalScale: {x: 23.336596, y: 0.89035976, z: 14.429247}
+  m_LocalScale: {x: 44.947224, y: 0.89035976, z: 14.429247}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 31
