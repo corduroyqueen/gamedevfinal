@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 23353455582435076}
   - component: {fileID: 114345533659695880}
   - component: {fileID: 54861485284028648}
+  - component: {fileID: 114128654646058570}
   m_Layer: 0
   m_Name: regularPlanker
   m_TagString: Player
@@ -365,6 +366,21 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114128654646058570
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1020788876522014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05a47969f2a6ded4994b0b148ed8ee80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  p: {fileID: 114345533659695880}
+  jump: {fileID: 0}
+  land: {fileID: 0}
+  plank: {fileID: 0}
 --- !u!114 &114319929252768910
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -393,6 +409,7 @@ MonoBehaviour:
   planking: 0
   camera: {fileID: 0}
   speed: 2.5
+  stillCheck: 1
   grounded: 0
   runningMaterial: {fileID: 13400000, guid: c5d672ed71af2904e98fdca681389454, type: 2}
   stoppedMaterial: {fileID: 13400000, guid: ceda5fd27555b694c95eb4b22669da4d, type: 2}
@@ -401,6 +418,8 @@ MonoBehaviour:
   jumpheight: 8
   trigger: {fileID: 1390150659937306}
   selectionPoint: {fileID: 1342448716622550}
+  xRotation: 0
+  still: 0
 --- !u!114 &114577367890845258
 MonoBehaviour:
   m_ObjectHideFlags: 1
