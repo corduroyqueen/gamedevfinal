@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -556,6 +556,8 @@ MonoBehaviour:
   planking: 0
   camera: {fileID: 1660263606}
   speed: 2.5
+  stillCheck: 1
+  jumping: 0
   grounded: 0
   runningMaterial: {fileID: 13400000, guid: c5d672ed71af2904e98fdca681389454, type: 2}
   stoppedMaterial: {fileID: 13400000, guid: ceda5fd27555b694c95eb4b22669da4d, type: 2}
@@ -564,6 +566,9 @@ MonoBehaviour:
   jumpheight: 3
   trigger: {fileID: 772756651}
   selectionPoint: {fileID: 1657457693}
+  xRotation: 0
+  still: 0
+  jump: {fileID: 0}
 --- !u!114 &343031239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1386,6 +1391,8 @@ MonoBehaviour:
   planking: 0
   camera: {fileID: 1017717876}
   speed: 2.5
+  stillCheck: 1
+  jumping: 0
   grounded: 0
   runningMaterial: {fileID: 13400000, guid: c5d672ed71af2904e98fdca681389454, type: 2}
   stoppedMaterial: {fileID: 13400000, guid: ceda5fd27555b694c95eb4b22669da4d, type: 2}
@@ -1394,6 +1401,9 @@ MonoBehaviour:
   jumpheight: 3
   trigger: {fileID: 1352449512}
   selectionPoint: {fileID: 1194937494}
+  xRotation: 0
+  still: 0
+  jump: {fileID: 0}
 --- !u!114 &1294701153
 MonoBehaviour:
   m_ObjectHideFlags: 0
