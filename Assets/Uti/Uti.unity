@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44652522, g: 0.49635226, b: 0.5747881, a: 1}
+  m_IndirectSpecularColor: {r: 0.44652456, g: 0.49635154, b: 0.5747874, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -299,7 +299,7 @@ GameObject:
   - component: {fileID: 277003271}
   m_Layer: 0
   m_Name: ground (1)
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -383,7 +383,7 @@ GameObject:
   - component: {fileID: 460126222}
   m_Layer: 0
   m_Name: ground (4)
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -467,7 +467,7 @@ GameObject:
   - component: {fileID: 530698219}
   m_Layer: 0
   m_Name: ground (3)
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -675,6 +675,8 @@ MonoBehaviour:
   planking: 0
   camera: {fileID: 1262866088}
   speed: 2.5
+  stillCheck: 1
+  jumping: 0
   grounded: 0
   runningMaterial: {fileID: 0}
   stoppedMaterial: {fileID: 0}
@@ -685,6 +687,7 @@ MonoBehaviour:
   selectionPoint: {fileID: 2041843736}
   xRotation: 0
   still: 0
+  jump: {fileID: 0}
 --- !u!1 &985278818
 GameObject:
   m_ObjectHideFlags: 0
@@ -985,6 +988,18 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4612757662111910, guid: af0ee61cfb29fde40be627b765cd56b2, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4612757662111910, guid: af0ee61cfb29fde40be627b765cd56b2, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.0157
+      objectReference: {fileID: 0}
+    - target: {fileID: 4612757662111910, guid: af0ee61cfb29fde40be627b765cd56b2, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114097663421309636, guid: af0ee61cfb29fde40be627b765cd56b2, type: 2}
     - {fileID: 114552610909236482, guid: af0ee61cfb29fde40be627b765cd56b2, type: 2}
@@ -1109,7 +1124,7 @@ GameObject:
   - component: {fileID: 1425606776}
   m_Layer: 0
   m_Name: ground
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1382,7 +1397,7 @@ GameObject:
   - component: {fileID: 1552023734}
   m_Layer: 0
   m_Name: movingPlatform
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1593,7 +1608,7 @@ GameObject:
   - component: {fileID: 1766004182}
   m_Layer: 0
   m_Name: ground
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1651,7 +1666,7 @@ GameObject:
   - component: {fileID: 1784096514}
   m_Layer: 0
   m_Name: ground
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

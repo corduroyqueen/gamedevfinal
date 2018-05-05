@@ -155,7 +155,7 @@ GameObject:
   - component: {fileID: 90175337}
   m_Layer: 0
   m_Name: ground
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -304,6 +304,8 @@ MonoBehaviour:
   planking: 0
   camera: {fileID: 631403820}
   speed: 2.5
+  stillCheck: 1
+  jumping: 0
   grounded: 0
   runningMaterial: {fileID: 13400000, guid: c5d672ed71af2904e98fdca681389454, type: 2}
   stoppedMaterial: {fileID: 13400000, guid: ceda5fd27555b694c95eb4b22669da4d, type: 2}
@@ -314,6 +316,7 @@ MonoBehaviour:
   selectionPoint: {fileID: 966332073}
   xRotation: 0
   still: 0
+  jump: {fileID: 0}
 --- !u!23 &273274742
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -607,7 +610,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4737114332262108, guid: 6362b95fece901343a853befe13f0e05, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4737114332262108, guid: 6362b95fece901343a853befe13f0e05, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -653,7 +656,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4151156927502008, guid: 2fbfbac2a3fabd94d955d9a693145c52, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2fbfbac2a3fabd94d955d9a693145c52, type: 2}
@@ -695,7 +698,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4326913183083988, guid: 5070ad5039fde4e4880b1178c12dcd4b, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4326913183083988, guid: 5070ad5039fde4e4880b1178c12dcd4b, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -769,7 +772,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4202442028282680, guid: a39393638fac8894cbd41ad32754d9c2, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1335794403844028, guid: a39393638fac8894cbd41ad32754d9c2, type: 2}
       propertyPath: m_Name
@@ -808,7 +811,7 @@ GameObject:
   - component: {fileID: 537921050}
   m_Layer: 0
   m_Name: ground
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -916,7 +919,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4680680780265790, guid: 95b106ac1b27d2545920267182a2df90, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 95b106ac1b27d2545920267182a2df90, type: 2}
@@ -2262,7 +2265,7 @@ GameObject:
   - component: {fileID: 1542875100}
   m_Layer: 0
   m_Name: ground
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2426,7 +2429,7 @@ GameObject:
   - component: {fileID: 1598697816}
   m_Layer: 0
   m_Name: ground
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2560,7 +2563,7 @@ GameObject:
   - component: {fileID: 1691890469}
   m_Layer: 0
   m_Name: ground
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2785,7 +2788,7 @@ GameObject:
   - component: {fileID: 1884456560}
   m_Layer: 0
   m_Name: ground
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2854,7 +2857,7 @@ Transform:
   m_LocalScale: {x: 2.2370627, y: 0.26802197, z: 1.9945678}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1884796706
 GameObject:
@@ -2982,7 +2985,7 @@ GameObject:
   - component: {fileID: 2001345594}
   m_Layer: 0
   m_Name: ground (1)
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
