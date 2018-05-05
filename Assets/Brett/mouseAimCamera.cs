@@ -4,7 +4,6 @@ using UnityEngine;
 
 // FUNCTION:
 // Move a Planker using your mouse.
-// Only pertains to rotation on Y axis (Left and Right)
 
 public class mouseAimCamera : MonoBehaviour {
 	// Planker:
@@ -13,6 +12,7 @@ public class mouseAimCamera : MonoBehaviour {
 	public float rotateSpeed = 5;
 	// Distance between player and camera.
 	Vector3 offset;
+	float yOffset = 2f;
 	// We change the planker's rotation through their PlankingController script.
 	plankingController thisItemsPlankingController;
 
@@ -29,16 +29,27 @@ public class mouseAimCamera : MonoBehaviour {
 		Cursor.lockState = CursorLockMode.Locked;
 
 		// Get input from mouse.
-		float horizontal = Input.GetAxis("Mouse X") * rotateSpeed;
+		float horizontal = Input.GetAxis("Mouse X") * rotateSpeed * 2f;
+		float vertical = Input.GetAxis("Mouse Y") * rotateSpeed * 0.01f;
 		// In the planker controller, change the planker's rotation using input from the mouse.
 		thisItemsPlankingController.mouseTest += horizontal;
+		yOffset -= vertical;
+		if (yOffset <= 0.2f) {
+			yOffset = 0.2f;
+		}
+		if (yOffset >= 3f) {
+			yOffset = 3f;
+		}
+		transform.position = new Vector3 (transform.position.x, yOffset, transform.position.z);
+
 		// OBSOLETE: Had to be modified to fit the plankingController.
 		//target.transform.Rotate(0, horizontal, 0);
 
 		// 
-		float desiredAngle = target.transform.eulerAngles.y;
-		Quaternion rotation = Quaternion.Euler(0, desiredAngle, 0);
-		transform.position = target.transform.position - (rotation * offset);
+		float desiredAngleX = target.transform.eulerAngles.x;
+		float desiredAngleY = target.transform.eulerAngles.y;
+		Quaternion rotation = Quaternion.Euler(desiredAngleX, desiredAngleY, 0);
+		//transform.position = target.transform.position - (rotation * offset);
 
 		// Point this camera at the player.
 		transform.LookAt(target.transform);
@@ -46,3 +57,8 @@ public class mouseAimCamera : MonoBehaviour {
 
 	}
 }
+
+
+
+
+
