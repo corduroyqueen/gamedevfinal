@@ -5,13 +5,9 @@ using UnityEngine;
 public class SoundEffects : MonoBehaviour {
 
     bool hasPlanked = false;
-    bool hasJumped = false;
-    bool hasLanded = false;
 
     public plankingController p;
 
-    public AudioSource jump;
-    public AudioSource land;
     public AudioSource plank;
 	
 	void Update () {
@@ -19,20 +15,6 @@ public class SoundEffects : MonoBehaviour {
         {
             hasPlanked = true;
             plank.Play();
-        }
-
-        if (p.trigger.GetComponent<groundedCheck>().groundedDetect && !hasLanded)
-        {
-            land.Play();
-            hasLanded = true;
-            hasJumped = false;
-        }
-
-        if (p.grounded && Input.GetKeyDown(KeyCode.Space) && !hasJumped)
-        {
-            jump.Play();
-            hasJumped = true;
-            hasLanded = false;
         }
 	}
 }

@@ -4,33 +4,48 @@ using UnityEngine;
 
 public class groundedCheck : MonoBehaviour {
 	public bool groundedDetect;
-	int playerAmt;
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
+    bool touching = false;
+    int playerAmt = 0;
 	void Update () {
-		
+        if (!touching)
+            groundedDetect = false;
 	}
 
-    void OnTriggerExit(Collider other)
+ //   void OnTriggerExit(Collider other)
+ //   {
+ //       if ((other.gameObject.tag == "ground" || other.gameObject.tag == "Player") && groundedDetect == true)
+ //       {
+ //           if (playerAmt == 1)
+ //           {
+ //               groundedDetect = false;
+ //           }
+ //           playerAmt -= 1;
+ //       }
+ //   }
+
+ //   void OnTriggerEnter(Collider other){
+	//	if (other.gameObject.tag=="ground" || other.gameObject.tag=="Player") {
+	//		groundedDetect = true;
+	//		playerAmt += 1;
+	//	}
+	//}
+
+    private void OnTriggerStay(Collider other)
     {
-        if ((other.gameObject.tag == "ground" || other.gameObject.tag == "Player") && groundedDetect == true)
+        if (other.gameObject.tag == "ground")
         {
-            if (playerAmt == 1)
+            touching = true;
+            if (other.gameObject.tag == "ground" || other.gameObject.tag == "Player")
             {
-                groundedDetect = false;
+                groundedDetect = true;
             }
-            playerAmt -= 1;
+
+            Debug.Log(other.gameObject.name);
         }
     }
 
-    void OnTriggerEnter(Collider other){
-		if (other.gameObject.tag=="ground" || other.gameObject.tag=="Player") {
-			groundedDetect = true;
-			playerAmt += 1;
-		}
-	}
+    private void OnTriggerExit(Collider other)
+    {
+        touching = false;
+    }
 }
