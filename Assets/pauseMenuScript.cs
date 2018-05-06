@@ -43,6 +43,7 @@ public class pauseMenuScript : MonoBehaviour {
 		closeMainMenuButton.SetActive(showButtons);
 		pauseMenuBackground.enabled = showButtons;
 		pauseMenuHeaderText.enabled = showButtons;
+		Cursor.visible = showButtons;
 	}
 
 	public void resetLevel() {
