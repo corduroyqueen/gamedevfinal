@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Video;
 
 // FUNCTIONALITY:
 // 1. Turn Pause Menu on and Off.
@@ -15,6 +16,10 @@ public class pauseMenuScript : MonoBehaviour {
 	public GameObject resetLevelButton;
 	public GameObject exitToMainMenuButton;
 	public GameObject closeMainMenuButton;
+	public GameObject colorBarsVideoRawImage;
+
+//	private VideoPlayer colorBarsVideoPlayer;
+//	private VideoSource colorBarsVideoSource;
 
 	public static bool playMusic;
 	public static bool playSFX;
@@ -43,6 +48,7 @@ public class pauseMenuScript : MonoBehaviour {
 		closeMainMenuButton.SetActive(showButtons);
 		pauseMenuBackground.SetActive(showButtons);
 		pauseMenuHeaderText.enabled = showButtons;
+		colorBarsVideoRawImage.SetActive (showButtons);
 		//Cursor.visible = showButtons;
 	}
 

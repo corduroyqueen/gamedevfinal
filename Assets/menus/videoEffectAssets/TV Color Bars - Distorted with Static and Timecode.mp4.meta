@@ -5,7 +5,7 @@ licenseType: Free
 VideoClipImporter:
   externalObjects: {}
   serializedVersion: 2
-  useLegacyImporter: 1
+  useLegacyImporter: 0
   quality: 0.5
   isColorLinear: 0
   frameRange: 0
