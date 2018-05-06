@@ -5,6 +5,7 @@ using UnityEngine;
 public class groundedCheck : MonoBehaviour {
 	public bool groundedDetect;
     bool touching = false;
+    int playerAmt = 0;
 	void Update () {
         if (!touching)
             groundedDetect = false;
@@ -31,13 +32,16 @@ public class groundedCheck : MonoBehaviour {
 
     private void OnTriggerStay(Collider other)
     {
-        touching = true;
-        if (other.gameObject.tag == "ground" || other.gameObject.tag=="Player")
+        if (other.gameObject.tag == "ground")
         {
-            groundedDetect = true;
-        }
+            touching = true;
+            if (other.gameObject.tag == "ground" || other.gameObject.tag == "Player")
+            {
+                groundedDetect = true;
+            }
 
-        Debug.Log(other.gameObject.name);
+            Debug.Log(other.gameObject.name);
+        }
     }
 
     private void OnTriggerExit(Collider other)
