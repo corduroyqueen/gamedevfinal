@@ -10,7 +10,7 @@ using UnityEngine.SceneManagement;
 public class pauseMenuScript : MonoBehaviour {
 
 	// These are the pause menu UI elements.
-	public Image pauseMenuBackground;
+	public GameObject pauseMenuBackground;
 	public Text pauseMenuHeaderText;
 	public GameObject resetLevelButton;
 	public GameObject exitToMainMenuButton;
@@ -41,7 +41,7 @@ public class pauseMenuScript : MonoBehaviour {
 		resetLevelButton.SetActive(showButtons);
 		exitToMainMenuButton.SetActive(showButtons);
 		closeMainMenuButton.SetActive(showButtons);
-		pauseMenuBackground.enabled = showButtons;
+		pauseMenuBackground.SetActive(showButtons);
 		pauseMenuHeaderText.enabled = showButtons;
 		//Cursor.visible = showButtons;
 	}
