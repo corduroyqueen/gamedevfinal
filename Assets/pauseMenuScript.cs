@@ -81,5 +81,9 @@ public class pauseMenuScript : MonoBehaviour {
 		playMusic = !playMusic;
 	}
 
+	public void toggleSFXMute() {
+		playSFX = !playSFX;
+	}
+
 
 }
