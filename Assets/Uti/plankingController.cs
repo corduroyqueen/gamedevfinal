@@ -119,11 +119,7 @@ public class plankingController : MonoBehaviour {
 				rb.velocity = new Vector3 (rb.velocity.x, rb.velocity.y, -speedCap);
 
 
-			if(Input.GetKeyDown (KeyCode.LeftShift)){
-				planking=true;
-				rb.AddRelativeForce(new Vector3 (0f, 0f, speed*1.5f),ForceMode.Impulse);
 
-			}
 
             if (trigger.GetComponent<groundedCheck>().groundedDetect == true) {
                 grounded = true;
@@ -138,6 +134,11 @@ public class plankingController : MonoBehaviour {
 			}
 
 			if (grounded) {
+				if(Input.GetKeyDown (KeyCode.LeftShift)){
+					planking=true;
+					rb.AddRelativeForce(new Vector3 (0f, 0f, speed*1.5f),ForceMode.Impulse);
+
+				}
 				rb.velocity = new Vector3 (rb.velocity.x, 0f, rb.velocity.z);
 				if (grounded && Input.GetKeyDown (KeyCode.Space)){
 					grounded = false;

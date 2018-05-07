@@ -793,6 +793,12 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 367256257}
+--- !u!114 &372462241 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114767622876247918, guid: 7c719ce26e3a04f0ca85d2401881873c,
+    type: 2}
+  m_PrefabInternal: {fileID: 996719950}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &392646047
 Prefab:
   m_ObjectHideFlags: 0
@@ -1038,12 +1044,6 @@ MonoBehaviour:
   closeMainMenuButton: {fileID: 251296082}
   colorBarsVideoRawImage: {fileID: 1788224756}
   thisLevelManager: {fileID: 407225584}
---- !u!114 &597788935 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114993541413124150, guid: 7c719ce26e3a04f0ca85d2401881873c,
-    type: 2}
-  m_PrefabInternal: {fileID: 996719950}
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &683628501
 GameObject:
   m_ObjectHideFlags: 0
@@ -2215,7 +2215,7 @@ Prefab:
         type: 2}
       propertyPath: players.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1154299928}
     - target: {fileID: 114684167807705222, guid: 7c719ce26e3a04f0ca85d2401881873c,
         type: 2}
       propertyPath: UIPlayerBlock.Array.data[2]
@@ -2237,7 +2237,7 @@ Prefab:
         type: 2}
       propertyPath: UIPlayerBlock.Array.data[1]
       value: 
-      objectReference: {fileID: 597788935}
+      objectReference: {fileID: 372462241}
     - target: {fileID: 224937217788870694, guid: 7c719ce26e3a04f0ca85d2401881873c,
         type: 2}
       propertyPath: m_RootOrder
@@ -2382,6 +2382,14 @@ Prefab:
     - target: {fileID: 1594914243821558, guid: af0ee61cfb29fde40be627b765cd56b2, type: 2}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4747240272521552, guid: af0ee61cfb29fde40be627b765cd56b2, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4747240272521552, guid: af0ee61cfb29fde40be627b765cd56b2, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -4.28
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114097663421309636, guid: af0ee61cfb29fde40be627b765cd56b2, type: 2}
