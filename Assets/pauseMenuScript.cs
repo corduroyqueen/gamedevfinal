@@ -61,8 +61,8 @@ public class pauseMenuScript : MonoBehaviour {
 		closeMainMenuButton.SetActive(showButtons);
 		pauseMenuBackground.SetActive(showButtons);
 		pauseMenuHeaderText.enabled = showButtons;
-		//colorBarsVideoRawImage.SetActive (showButtons);
-		//Cursor.visible = showButtons;
+		colorBarsVideoRawImage.SetActive (showButtons);
+		Cursor.visible = showButtons;
 
 
 
