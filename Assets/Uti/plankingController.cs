@@ -166,13 +166,12 @@ public class plankingController : MonoBehaviour {
         } else if (transform.eulerAngles.x == xRotation) {
 			still = true;
             xRotation = transform.eulerAngles.x;
-            Debug.Log(xRotation);
-            Debug.Log("Actual rotation: " + transform.rotation.x);
+           
             stillCheck = false;
 		} else {
 			still = false;
             xRotation = transform.eulerAngles.x;
-            Debug.Log("Should be movin");
+            
             stillCheck = false;
 		}
 	}

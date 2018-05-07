@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 // FUNCTION:
 // This script determines who the active player is through player input.
@@ -76,7 +77,6 @@ public class LevelManager : MonoBehaviour {
 		// This Switch statement determines how many UI slots there are.
 		switch (players.Length) {
 		case 1:
-			
 			UIPlayerBlock [0].rectTransform.anchoredPosition = UISlotFarRight;
 
 			goldArrowSlot[0] = new Vector2 (UISlotFarRight.x, UISlotFarRight.y + 30);
@@ -139,14 +139,13 @@ public class LevelManager : MonoBehaviour {
 
     void Update ()
     {
-		Debug.Log (activePlayer);
 
 		// Makes inactive players kinematic.
 		// Scan through all plankers in the scene.
 		for (int i = 0; i < players.Length ; i++) {
 			// If this plankers is NOT the active planker.
 			if (players [i] == activePlayer) {
-				Debug.Log ("Active player" + players [pNum]);
+				
                 // Allow the planker to be moved by physics.
 				//players[i].GetComponent<Rigidbody>().freezeRotation = false;
 
