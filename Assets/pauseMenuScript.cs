@@ -21,8 +21,8 @@ public class pauseMenuScript : MonoBehaviour {
 //	private VideoPlayer colorBarsVideoPlayer;
 //	private VideoSource colorBarsVideoSource;
 
-	public static bool playMusic;
-	public static bool playSFX;
+	public static bool playMusic = true;
+	public static bool playSFX = true;
 
 	public LevelManager thisLevelManager;
 	GameObject currentActivePlayer;
