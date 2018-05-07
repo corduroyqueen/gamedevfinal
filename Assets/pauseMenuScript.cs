@@ -24,6 +24,9 @@ public class pauseMenuScript : MonoBehaviour {
 	public static bool playMusic;
 	public static bool playSFX;
 
+	public LevelManager thisLevelManager;
+	GameObject currentActivePlayer;
+
 
 	// This bool keeps track of whether or not we show the pause menu buttons.
 	bool showButtons = false;
@@ -39,6 +42,16 @@ public class pauseMenuScript : MonoBehaviour {
 	}
 
 	public void togglePauseMenu () {
+
+		currentActivePlayer = thisLevelManager.activePlayer;
+			
+		plankingController currentPlankingController = currentActivePlayer.GetComponent<plankingController> ();
+		currentPlankingController.enabled = showButtons;
+		CameraAction currentCameraAction = currentActivePlayer.GetComponentInChildren<CameraAction> ();
+		currentCameraAction.enabled = showButtons;
+		mouseAimCamera currentMouseAimCamera = currentActivePlayer.GetComponentInChildren<mouseAimCamera> ();
+		currentMouseAimCamera.enabled = showButtons;
+
 		// Toggle the showButtons boolean.
 		showButtons = !showButtons;
 
@@ -48,11 +61,21 @@ public class pauseMenuScript : MonoBehaviour {
 		closeMainMenuButton.SetActive(showButtons);
 		pauseMenuBackground.SetActive(showButtons);
 		pauseMenuHeaderText.enabled = showButtons;
-		colorBarsVideoRawImage.SetActive (showButtons);
+		//colorBarsVideoRawImage.SetActive (showButtons);
 		//Cursor.visible = showButtons;
+
+
+
 	}
 
 	public void resetLevel() {
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+		// Debug.Log ("Resetting level.");
 	}
+
+	public void goToMainMenu() {
+		SceneManager.LoadScene (0);
+	}
+
+
 }
