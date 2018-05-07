@@ -77,5 +77,9 @@ public class pauseMenuScript : MonoBehaviour {
 		SceneManager.LoadScene (0);
 	}
 
+	public void toggleMusicMute() {
+		playMusic = !playMusic;
+	}
+
 
 }
