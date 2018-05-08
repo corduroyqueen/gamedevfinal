@@ -137,6 +137,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4108767517635692}
   - component: {fileID: 114684167807705222}
+  - component: {fileID: 114540268802647122}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -463,6 +464,17 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 2
+--- !u!114 &114540268802647122
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1469684747011086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f2f86659d8344cfe945e5ab4198764b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114547550465140776
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -495,6 +507,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  activePlayer: {fileID: 0}
   UIPlayerBlock:
   - {fileID: 114767622876247918}
   - {fileID: 114993541413124150}
@@ -512,7 +525,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.89705884, g: 0.1978806, b: 0.1978806, a: 1}
+  m_Color: {r: 0.83100915, g: 0.3143382, b: 0.83823526, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -572,7 +585,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.69803923, g: 0.28235295, b: 0.7686275, a: 1}
+  m_Color: {r: 0.43241784, g: 0.4359772, b: 0.9485294, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
