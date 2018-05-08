@@ -41,7 +41,12 @@ public class transistionSceneManager : MonoBehaviour {
 			startTransition = true;
 		}
 
-		if (startTransition && !transistionScenceAudioSource.isPlaying) 
-			SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex + 1);
+		if (startTransition && !transistionScenceAudioSource.isPlaying)
+			startNextLevel ();
 	}
+
+	public void startNextLevel () {
+		SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex + 1);
+	}
+
 }
