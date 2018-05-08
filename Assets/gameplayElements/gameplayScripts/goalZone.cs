@@ -19,6 +19,10 @@ public class goalZone : MonoBehaviour {
 		if (timer > 0)
         {
             timer -= Time.deltaTime;
+            if (timer <= .2f)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
         }
 	}
 
@@ -30,10 +34,6 @@ public class goalZone : MonoBehaviour {
                 {
                     victory.Play();
                     complete = true;
-                }
-                if (timer <= 0)
-                {
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
                 }
 			}
 		}

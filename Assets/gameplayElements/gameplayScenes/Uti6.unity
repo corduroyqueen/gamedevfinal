@@ -2239,7 +2239,7 @@ Prefab:
     - target: {fileID: 224295869428240546, guid: 7c719ce26e3a04f0ca85d2401881873c,
         type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 223666595755151404, guid: 7c719ce26e3a04f0ca85d2401881873c,
         type: 2}
@@ -2679,7 +2679,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   complete: 0
-  victory: {fileID: 0}
+  victory: {fileID: 1290379918}
 --- !u!23 &1143498239
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3329,7 +3329,8 @@ Prefab:
       propertyPath: victory
       value: 
       objectReference: {fileID: 1290379918}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114355613426526376, guid: b083edf5e1e4e624ab7dc2aa7fc9587c, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: b083edf5e1e4e624ab7dc2aa7fc9587c, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1458681872
