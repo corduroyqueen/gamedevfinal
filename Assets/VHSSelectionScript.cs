@@ -16,7 +16,7 @@ public class VHSSelectionScript : MonoBehaviour {
 	void Update() {
 
 		if (startRotating) {
-			VHS.transform.Rotate (0, 3, 0);
+			//VHS.transform.Rotate (0, 3, 0);
 		}
 	}
 
@@ -31,6 +31,7 @@ public class VHSSelectionScript : MonoBehaviour {
 	}
 
 	public void loadScene() {
+		Debug.Log ("VHS clicked.");
 		SceneManager.LoadScene (levelNumber, LoadSceneMode.Single);
 	}
 }
