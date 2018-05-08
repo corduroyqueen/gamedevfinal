@@ -18,6 +18,14 @@ public class mouseAimCamera : MonoBehaviour {
 
 
 	void Start() {
+
+
+
+		if (this.gameObject.name == "Camera 2") {
+			this.transform.localPosition = new Vector3 (0f, 0.8f, -6.3f);
+		} else {
+			this.transform.localPosition = new Vector3 (0f, 0.8f, -4f);
+		}
 		// Set the distance between camera and player.
 		offset = target.transform.position - transform.position;
 		// Get the planker's Plank Controller.
@@ -30,17 +38,19 @@ public class mouseAimCamera : MonoBehaviour {
 
 		// Get input from mouse.
 		float horizontal = Input.GetAxis("Mouse X") * rotateSpeed * 2f;
-		float vertical = Input.GetAxis("Mouse Y") * rotateSpeed * 0.01f;
+		float vertical = Input.GetAxis("Mouse Y") * rotateSpeed * 0.03f;
 		// In the planker controller, change the planker's rotation using input from the mouse.
 		thisItemsPlankingController.mouseTest += horizontal;
-		yOffset -= vertical;
-		if (yOffset <= 0.2f) {
-			yOffset = 0.2f;
+		if (thisItemsPlankingController.planking == false) {
+			yOffset -= vertical;
+		}
+		if (yOffset <= -1f) {
+			yOffset = -1f;
 		}
 		if (yOffset >= 3f) {
 			yOffset = 3f;
 		}
-		transform.position = new Vector3 (transform.position.x, yOffset, transform.position.z);
+		transform.position = new Vector3 (transform.position.x, target.transform.position.y+yOffset, transform.position.z);
 
 		// OBSOLETE: Had to be modified to fit the plankingController.
 		//target.transform.Rotate(0, horizontal, 0);

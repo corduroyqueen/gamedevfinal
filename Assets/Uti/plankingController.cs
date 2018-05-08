@@ -34,6 +34,7 @@ public class plankingController : MonoBehaviour {
 	public float xRotation;
 	public bool still;
     bool hasLanded = false;
+    public int jumpTimer = 0;
 
     public AudioSource jump;
     public AudioSource ground;
@@ -54,6 +55,10 @@ public class plankingController : MonoBehaviour {
 	}
 
 	void Update(){
+        if (jumpTimer > 0)
+        {
+            jumpTimer--;
+        }
 		// This checks if this is the active player.
 		if (planking==false && LevelManager.instance.returnActive()==this.gameObject){
 
@@ -119,13 +124,9 @@ public class plankingController : MonoBehaviour {
 				rb.velocity = new Vector3 (rb.velocity.x, rb.velocity.y, -speedCap);
 
 
-			if(Input.GetKeyDown (KeyCode.LeftShift)){
-				planking=true;
-				rb.AddRelativeForce(new Vector3 (0f, 0f, speed*1.5f),ForceMode.Impulse);
 
-			}
 
-            if (trigger.GetComponent<groundedCheck>().groundedDetect == true) {
+            if (trigger.GetComponent<groundedCheck>().groundedDetect == true && jumpTimer == 0) {
                 grounded = true;
                 jumping = false;
                 if (!hasLanded)
@@ -138,14 +139,18 @@ public class plankingController : MonoBehaviour {
 			}
 
 			if (grounded) {
+				if(Input.GetKeyDown (KeyCode.LeftShift)){
+					planking=true;
+					rb.AddRelativeForce(new Vector3 (0f, 0f, speed*1.5f),ForceMode.Impulse);
+				}
 				rb.velocity = new Vector3 (rb.velocity.x, 0f, rb.velocity.z);
-				if (grounded && Input.GetKeyDown (KeyCode.Space)){
+				if (Input.GetKeyDown (KeyCode.Space)){
 					grounded = false;
 					rb.AddForce(new Vector3 (0f, jumpheight, 0f),ForceMode.Impulse);
                     jumping = true;
                     jump.Play();
                     hasLanded = false;
-
+                    jumpTimer = 5;
 				}
 			}
 				
@@ -165,13 +170,12 @@ public class plankingController : MonoBehaviour {
         } else if (transform.eulerAngles.x == xRotation) {
 			still = true;
             xRotation = transform.eulerAngles.x;
-            Debug.Log(xRotation);
-            Debug.Log("Actual rotation: " + transform.rotation.x);
+           
             stillCheck = false;
 		} else {
 			still = false;
             xRotation = transform.eulerAngles.x;
-            Debug.Log("Should be movin");
+            
             stillCheck = false;
 		}
 	}

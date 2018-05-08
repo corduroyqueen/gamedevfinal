@@ -11,7 +11,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/menus/mainMenuScenes/directions.unity
     guid: cee988574babd4d04b8033e1ad62e47f
+<<<<<<< HEAD
   - enabled: 0
+=======
+  - enabled: 1
+>>>>>>> 614bccc058247caf05fd07044d9720a39cb987d5
     path: Assets/menus/mainMenuScenes/Goal.unity
     guid: 4134ad6881cdb48fcb582e9e322162bc
   - enabled: 0
