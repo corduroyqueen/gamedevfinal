@@ -18,6 +18,14 @@ public class mouseAimCamera : MonoBehaviour {
 
 
 	void Start() {
+
+
+
+		if (this.gameObject.name == "Camera 2") {
+			this.transform.localPosition = new Vector3 (0f, 0.8f, -6.3f);
+		} else {
+			this.transform.localPosition = new Vector3 (0f, 0.8f, -4f);
+		}
 		// Set the distance between camera and player.
 		offset = target.transform.position - transform.position;
 		// Get the planker's Plank Controller.
