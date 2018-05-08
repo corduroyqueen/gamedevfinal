@@ -1,0 +1,242 @@
+fileFormatVersion: 2
+guid: 0e3211d2a61d1400b8ad0634d7b9e685
+timeCreated: 1525815577
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: group1
+    100002: group2
+    100004: pSphere1
+    100006: rubiksBlock
+    100008: rubiksBlock1
+    100010: rubiksBlock10
+    100012: rubiksBlock11
+    100014: rubiksBlock12
+    100016: rubiksBlock13
+    100018: rubiksBlock14
+    100020: rubiksBlock15
+    100022: rubiksBlock16
+    100024: rubiksBlock17
+    100026: rubiksBlock18
+    100028: rubiksBlock19
+    100030: rubiksBlock2
+    100032: rubiksBlock20
+    100034: rubiksBlock21
+    100036: rubiksBlock22
+    100038: rubiksBlock23
+    100040: rubiksBlock24
+    100042: rubiksBlock25
+    100044: rubiksBlock26
+    100046: rubiksBlock3
+    100048: rubiksBlock4
+    100050: rubiksBlock5
+    100052: rubiksBlock6
+    100054: rubiksBlock7
+    100056: rubiksBlock8
+    100058: rubiksBlock9
+    100060: //RootNode
+    400000: group1
+    400002: group2
+    400004: pSphere1
+    400006: rubiksBlock
+    400008: rubiksBlock1
+    400010: rubiksBlock10
+    400012: rubiksBlock11
+    400014: rubiksBlock12
+    400016: rubiksBlock13
+    400018: rubiksBlock14
+    400020: rubiksBlock15
+    400022: rubiksBlock16
+    400024: rubiksBlock17
+    400026: rubiksBlock18
+    400028: rubiksBlock19
+    400030: rubiksBlock2
+    400032: rubiksBlock20
+    400034: rubiksBlock21
+    400036: rubiksBlock22
+    400038: rubiksBlock23
+    400040: rubiksBlock24
+    400042: rubiksBlock25
+    400044: rubiksBlock26
+    400046: rubiksBlock3
+    400048: rubiksBlock4
+    400050: rubiksBlock5
+    400052: rubiksBlock6
+    400054: rubiksBlock7
+    400056: rubiksBlock8
+    400058: rubiksBlock9
+    400060: //RootNode
+    2100000: Red
+    2100002: orange
+    2100004: Blue
+    2100006: yellow
+    2100008: white
+    2100010: green
+    2100012: black
+    2300000: pSphere1
+    2300002: rubiksBlock
+    2300004: rubiksBlock1
+    2300006: rubiksBlock10
+    2300008: rubiksBlock11
+    2300010: rubiksBlock12
+    2300012: rubiksBlock13
+    2300014: rubiksBlock14
+    2300016: rubiksBlock15
+    2300018: rubiksBlock16
+    2300020: rubiksBlock17
+    2300022: rubiksBlock18
+    2300024: rubiksBlock19
+    2300026: rubiksBlock2
+    2300028: rubiksBlock20
+    2300030: rubiksBlock21
+    2300032: rubiksBlock22
+    2300034: rubiksBlock23
+    2300036: rubiksBlock24
+    2300038: rubiksBlock25
+    2300040: rubiksBlock26
+    2300042: rubiksBlock3
+    2300044: rubiksBlock4
+    2300046: rubiksBlock5
+    2300048: rubiksBlock6
+    2300050: rubiksBlock7
+    2300052: rubiksBlock8
+    2300054: rubiksBlock9
+    3300000: pSphere1
+    3300002: rubiksBlock
+    3300004: rubiksBlock1
+    3300006: rubiksBlock10
+    3300008: rubiksBlock11
+    3300010: rubiksBlock12
+    3300012: rubiksBlock13
+    3300014: rubiksBlock14
+    3300016: rubiksBlock15
+    3300018: rubiksBlock16
+    3300020: rubiksBlock17
+    3300022: rubiksBlock18
+    3300024: rubiksBlock19
+    3300026: rubiksBlock2
+    3300028: rubiksBlock20
+    3300030: rubiksBlock21
+    3300032: rubiksBlock22
+    3300034: rubiksBlock23
+    3300036: rubiksBlock24
+    3300038: rubiksBlock25
+    3300040: rubiksBlock26
+    3300042: rubiksBlock3
+    3300044: rubiksBlock4
+    3300046: rubiksBlock5
+    3300048: rubiksBlock6
+    3300050: rubiksBlock7
+    3300052: rubiksBlock8
+    3300054: rubiksBlock9
+    4300000: rubiksBlock
+    4300002: rubiksBlock1
+    4300004: rubiksBlock2
+    4300006: rubiksBlock3
+    4300008: rubiksBlock4
+    4300010: rubiksBlock5
+    4300012: rubiksBlock6
+    4300014: rubiksBlock7
+    4300016: rubiksBlock8
+    4300018: rubiksBlock10
+    4300020: rubiksBlock11
+    4300022: rubiksBlock16
+    4300024: rubiksBlock14
+    4300026: rubiksBlock13
+    4300028: rubiksBlock12
+    4300030: rubiksBlock9
+    4300032: rubiksBlock15
+    4300034: rubiksBlock17
+    4300036: rubiksBlock18
+    4300038: rubiksBlock26
+    4300040: rubiksBlock20
+    4300042: rubiksBlock22
+    4300044: rubiksBlock19
+    4300046: rubiksBlock21
+    4300048: rubiksBlock23
+    4300050: rubiksBlock25
+    4300052: rubiksBlock24
+    4300054: pSphere1
+    7400000: Take 001
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
