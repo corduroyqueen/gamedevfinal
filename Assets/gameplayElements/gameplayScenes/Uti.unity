@@ -646,7 +646,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -755,7 +755,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -910,7 +910,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1335,6 +1335,10 @@ Prefab:
     - target: {fileID: 100002, guid: c8150f2450419124c97df8c78cea4279, type: 3}
       propertyPath: m_Name
       value: LIGHTGUY (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: c8150f2450419124c97df8c78cea4279, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c8150f2450419124c97df8c78cea4279, type: 3}
@@ -2325,7 +2329,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -3077,7 +3081,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1698944178}
   m_Layer: 0
-  m_Name: SFX
+  m_Name: SFXCollection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
