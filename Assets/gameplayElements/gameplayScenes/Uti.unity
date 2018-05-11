@@ -404,6 +404,16 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114073418949117994, guid: 99e0b2aa2e662432dbf7f56e3a17921d,
+        type: 2}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114073418949117994, guid: 99e0b2aa2e662432dbf7f56e3a17921d,
+        type: 2}
+      propertyPath: m_ReferenceResolution.x
+      value: 960
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 99e0b2aa2e662432dbf7f56e3a17921d, type: 2}
   m_IsPrefabParent: 0
@@ -3406,6 +3416,11 @@ Prefab:
     - target: {fileID: 4240721656034072, guid: 70d6d780b93e549c698d00cc7ec5c9d9, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 82577867164396430, guid: 70d6d780b93e549c698d00cc7ec5c9d9,
+        type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 70d6d780b93e549c698d00cc7ec5c9d9, type: 2}

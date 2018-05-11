@@ -219,7 +219,7 @@ Transform:
   m_LocalScale: {x: 12.892051, y: 1, z: 7.6154003}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 27
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &207392638
 GameObject:
@@ -654,7 +654,7 @@ Transform:
   m_LocalScale: {x: 16.66775, y: 1, z: 7.1213636}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: -0.011000001, y: 89.935005, z: -0.018000001}
 --- !u!1 &367256257
 GameObject:
@@ -1273,7 +1273,7 @@ Transform:
   m_LocalScale: {x: 14.301501, y: 1, z: 7.6154003}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 29
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!1001 &706763683
 Prefab:
@@ -1883,7 +1883,7 @@ Transform:
   m_LocalScale: {x: 7.54594, y: 1, z: 7.1213636}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 90.00001, z: 0.485}
 --- !u!1001 &924152395
 Prefab:
@@ -2173,7 +2173,7 @@ Transform:
   m_LocalScale: {x: 14.874405, y: 1, z: 7.6154003}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!1001 &994629178
 Prefab:
@@ -2327,7 +2327,7 @@ Prefab:
     - target: {fileID: 224295869428240546, guid: 7c719ce26e3a04f0ca85d2401881873c,
         type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 223666595755151404, guid: 7c719ce26e3a04f0ca85d2401881873c,
         type: 2}
@@ -2346,6 +2346,16 @@ Prefab:
     - target: {fileID: 1356514497129944, guid: 7c719ce26e3a04f0ca85d2401881873c, type: 2}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114073418949117994, guid: 7c719ce26e3a04f0ca85d2401881873c,
+        type: 2}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114073418949117994, guid: 7c719ce26e3a04f0ca85d2401881873c,
+        type: 2}
+      propertyPath: m_ReferenceResolution.x
+      value: 960
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7c719ce26e3a04f0ca85d2401881873c, type: 2}
